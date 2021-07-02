@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:upstream" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3c9642f5-d8b8-440b-b00a-6b677cd5a1be" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/hoardr-mobile-95.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hoardr_app/assets/images/inventory.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hoardr_app/assets/images/uploaditem.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hoardr_app/lib/screens/addItems_Screens/addItem_1.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hoardr_app/lib/screens/addItems_Screens/addItems_Screen2.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hoardr_app/lib/screens/addItems_Screens/viewInventory.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hoardr_app/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/hoardr_app/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hoardr_app/lib/screens/onboarding/component/onboarding_content.dart" beforeDir="false" afterPath="$PROJECT_DIR$/hoardr_app/lib/screens/onboarding/component/onboarding_content.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hoardr_app/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/hoardr_app/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hoardr_app/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/hoardr_app/pubspec.yaml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1uJXUMQWts8V1XiFRq99Mn9g9v6" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../notes_app" />
+    <property name="settings.editor.selected.configurable" value="dart.settings" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3c9642f5-d8b8-440b-b00a-6b677cd5a1be" name="Default Changelist" comment="" />
+      <created>1624384679280</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1624384679280</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="429" y="167" key="#Notifications" timestamp="1624468149113">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="429" y="167" key="#Notifications/0.0.1280.680@0.0.1280.680" timestamp="1624468149113" />
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1624627206371">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1624627206371" />
+    <state x="93" y="93" width="1095" height="495" key="AVDManager" timestamp="1624627022794">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="93" y="93" width="1095" height="495" key="AVDManager/0.0.1280.680@0.0.1280.680" timestamp="1624627022794" />
+    <state x="485" y="90" key="AndroidProcessChooserDialog" timestamp="1624627189215">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="485" y="90" key="AndroidProcessChooserDialog/0.0.1280.680@0.0.1280.680" timestamp="1624627189215" />
+    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1624627081831">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1624627081831" />
+    <state x="165" y="0" key="SettingsEditor" timestamp="1624478597239">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="165" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1624478597239" />
+  </component>
+</project>
