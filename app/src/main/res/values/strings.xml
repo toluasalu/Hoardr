@@ -9,4 +9,6 @@
     <string name="search_placeholder">Search here, “year” “special days”</string>
     <string name="start_a_conversation">START A CONVERSATION</string>
     <string name="you_have_no_messages">You don’t have any conversations yet start a conversation today by clicking on the link below</string>
+    <string name="name_place_holder">Osemudiamen Itua</string>
+    <string name="placeholder_message_content" >Welcome, Joel. I really look \nforward to meeting you at this ...</string>
 </resources>
