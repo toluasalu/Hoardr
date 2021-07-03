@@ -1,6 +1,31 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Hoardr</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="back">back</string>
+    <string name="security_settings">Security Settings</string>
+    <string name="biometrics">Biometrics</string>
+    <string name="change_password">Change password</string>
+    <string name="go">go</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="save">save</string>
+    <string name="password_success">password success</string>
+    <string name="continuee">Continue</string>
+    <string name="profile_settings">Profile Settings</string>
+    <string name="terms_conditions"><![CDATA[Terms & Conditions]]></string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nisl tellus orci, metus, maecenas eget mus. Sollicitudin augue facilisi felis tempor molestie habitant morbi sed volutpat. Feugiat nibh laoreet aenean mauris. Arcu elit rutrum morbi aliquam porta auctor ut pharetra dolor. Cras gravida dui in tortor rhoncus.
+A feugiat bibendum ornare non feugiat enim aliquet in. Faucibus diam metus cras porttitor nunc imperdiet. Tortor amet, egestas quam facilisis quam suspendisse a consequat felis. Eleifend nulla venenatis tempus pulvinar lacinia. Semper lectus mauris facilisis leo tortor ultricies sed. Montes, morbi vitae massa, eget neque viverra.
+Turpis nisl at placerat eget consequat id. Bibendum amet, purus et, arcu. Enim sit pretium in volutpat sit consectetur ut vitae iaculis. Nec cras adipiscing magna nunc ac risus. Mauris eget fermentum urna, justo. Mi sed enim mattis faucibus. Morbi nulla amet aliquet vel eget ullamcorper sem. Velit sociis malesuada adipiscing molestie pulvinar et malesuada bibendum sollicitudin. A odio diam curabitur venenatis, a nunc risus sed amet. Pellentesque nisl, tellus eget amet, enim morbi commodo, luctus dictum. Quis mauris, elementum penatibus id lectus diam. Convallis etiam cursus.</string>
+    <string name="what_is_digslist">What is digslist</string>
+    <string name="how_does_digslist_work">How does digslist work?</string>
+    <string name="what_happens_when_i_find_a_digsmate">What happens when I find a digsmate?</string>
+    <string name="what_are_the_requirement_to_register">What are the requirement to register?</string>
+    <string name="why_do_you_need_some_personal_details">Why do you need some personal details?</string>
+    <string name="what_are_the_process_of_getting_a_digsmate">What are the process of getting a digsmate?</string>
+    <string name="what_happens_to_violators">What happens to violators</string>
+    <string name="help">Help</string>
+    <string name="faq">FAQ</string>
+
 </resources>
