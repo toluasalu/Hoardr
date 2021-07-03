@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/chat"
+        android:title="CHATS"/>
+
+    <item
+        android:id="@+id/sales"
+        android:title="SALES" />
+
+    <item
+        android:id="@+id/exchange"
+        android:title="EXCHANGE"/>
+
+
+</menu>
