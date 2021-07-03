@@ -81,12 +81,6 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:${retrofit_version}"
     implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2"
 
-    // Biometric Authentication
-    implementation 'androidx.biometric:biometric:1.1.0'
-
-    // Expandable text
-    implementation 'com.ms-square:expandableTextView:0.1.4'
-
     // Room Database
 //    def room_version = "2.3.0"
 //    implementation "androidx.room:room-runtime:$room_version"
