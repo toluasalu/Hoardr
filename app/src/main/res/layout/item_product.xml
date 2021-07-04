@@ -11,29 +11,29 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/image_item"
+            android:id="@+id/image_item_product"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:scaleType="centerCrop"
-            app:layout_constraintBottom_toTopOf="@+id/text_item_name"
+            app:layout_constraintBottom_toTopOf="@+id/text_item_product_name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/image_favourite"
+            android:id="@+id/image_item_product_favourite"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="8dp"
             app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintEnd_toEndOf="@+id/text_item_amount"
+            app:layout_constraintEnd_toEndOf="@+id/text_item_product_amount"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
-            app:layout_constraintTop_toTopOf="@+id/image_item"
+            app:layout_constraintTop_toTopOf="@+id/image_item_product"
             app:srcCompat="@drawable/ic_notifications_black_24dp" />
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/image_item_owner"
+            android:id="@+id/image_item_product_owner"
             style="@style/CircleImageView"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -54,41 +54,41 @@
             app:layout_constraintGuide_percent="0.15" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/text_item_name"
+            android:id="@+id/text_item_product_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             tools:text="Blue Gucci Shirt"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/image_item_owner"
-            app:layout_constraintEnd_toEndOf="@+id/text_item_amount"
-            app:layout_constraintStart_toStartOf="@+id/image_item_owner" />
+            app:layout_constraintBottom_toTopOf="@+id/image_item_product_owner"
+            app:layout_constraintEnd_toEndOf="@+id/text_item_product_amount"
+            app:layout_constraintStart_toStartOf="@+id/image_item_product_owner" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/text_item_owner"
+            android:id="@+id/text_item_product_owner"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             tools:text="Anonymous"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            app:layout_constraintBottom_toBottomOf="@+id/image_item_owner"
-            app:layout_constraintEnd_toStartOf="@+id/text_item_amount"
-            app:layout_constraintStart_toEndOf="@+id/image_item_owner"
-            app:layout_constraintTop_toTopOf="@+id/image_item_owner" />
+            app:layout_constraintBottom_toBottomOf="@+id/image_item_product_owner"
+            app:layout_constraintEnd_toStartOf="@+id/text_item_product_amount"
+            app:layout_constraintStart_toEndOf="@+id/image_item_product_owner"
+            app:layout_constraintTop_toTopOf="@+id/image_item_product_owner" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/text_item_amount"
+            android:id="@+id/text_item_product_amount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             tools:text="N 2,500"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            app:layout_constraintBottom_toBottomOf="@+id/image_item_owner"
+            app:layout_constraintBottom_toBottomOf="@+id/image_item_product_owner"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintTop_toTopOf="@+id/image_item_owner" />
+            app:layout_constraintTop_toTopOf="@+id/image_item_product_owner" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline3"
