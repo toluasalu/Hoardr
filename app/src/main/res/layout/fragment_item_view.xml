@@ -7,11 +7,12 @@
     android:padding="@dimen/regular_view_sub_margins"
     android:paddingEnd="0sp">
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/text_item_name"
         style="@style/TextHeading"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/home_header_margin"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -28,7 +29,7 @@
         app:layout_constraintTop_toBottomOf="@+id/text_item_name"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView7"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -38,7 +39,7 @@
         app:layout_constraintStart_toEndOf="@+id/image_item_owner"
         app:layout_constraintTop_toTopOf="@+id/image_item_owner" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/text_item_owner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -62,7 +63,7 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.05" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/text_item_price"
         style="@style/TextHeading"
         android:layout_width="wrap_content"
@@ -77,7 +78,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/text_item_name" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView10"
         style="@style/TextHeading"
         android:layout_width="wrap_content"
@@ -87,7 +88,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/text_item_description"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -99,7 +100,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView12"
         style="@style/TextHeading"
         android:layout_width="wrap_content"
