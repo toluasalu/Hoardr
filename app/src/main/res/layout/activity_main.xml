@@ -20,12 +20,11 @@
 
             app:toolbarId="@+id/toolbar">
 
-            <ImageView
+            <include
                 android:id="@+id/app_bar_image"
+                layout="@layout/partial_app_bar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@android:drawable/sym_def_app_icon" />
+                android:layout_height="match_parent"/>
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/toolbar"
