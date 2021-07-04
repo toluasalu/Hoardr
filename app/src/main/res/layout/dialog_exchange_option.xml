@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:padding="@dimen/regular_view_sub_margins">
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView8"
         style="@style/TextHeading"
         android:layout_width="0dp"
