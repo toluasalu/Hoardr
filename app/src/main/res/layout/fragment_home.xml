@@ -13,7 +13,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/home_header_margin"
-        android:text="Hello Dasilva,"
+        tools:text="Hello Dasilva,"
         app:layout_constraintBottom_toTopOf="@+id/text_home_time_greeting"
         app:layout_constraintEnd_toStartOf="@+id/button_home_register"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Good evening"
+        tools:text="Good evening"
         app:layout_constraintStart_toStartOf="@+id/text_home_greeting"
         app:layout_constraintTop_toBottomOf="@+id/text_home_greeting" />
 

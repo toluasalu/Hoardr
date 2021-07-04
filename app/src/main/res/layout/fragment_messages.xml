@@ -104,6 +104,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        tools:listitem="@layout/chat_head_recycler_view_item" />
+        tools:listitem="@layout/item_chat" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
