@@ -7,10 +7,11 @@
     <color name="teal_700">@color/colorPrimary</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
+  
     <color name="colorTextGrey">#A5A5B3</color>
     <color name="colorTextThickGrey">#4B4B58</color>
     <color name="colorPrimary">#FF3D57</color>
-    <color name="colorWhite">#FFFFFF</color>
-    <color name="colorBackground">#FFFFFF</color>
+    <color name="gray">#4B4B58</color>
+    <color name="text_color">#818195</color>
+    <color name="hot_yellow">#FFCA00</color>
 </resources>
