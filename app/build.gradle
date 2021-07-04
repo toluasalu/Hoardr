@@ -66,13 +66,19 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
 
     // Coroutines
-    def coroutine_version = '1.4.3'
+    def coroutine_version = '1.5.0-native-mt'
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_version"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
     //implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.1.1" // for play services
 
     // Gson
-    implementation "com.google.code.gson:gson:2.8.6"
+    implementation 'com.google.code.gson:gson:2.8.7'
+
+    // Biometric Authentication
+    implementation 'androidx.biometric:biometric:1.1.0'
+
+    // Expandable text
+    implementation 'com.ms-square:expandableTextView:0.1.4'
 
     // Retrofit
     def retrofit_version = '2.9.0'
