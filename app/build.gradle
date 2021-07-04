@@ -74,6 +74,12 @@ dependencies {
     // Gson
     implementation "com.google.code.gson:gson:2.8.6"
 
+    // Biometric Authentication
+    implementation 'androidx.biometric:biometric:1.1.0'
+
+    // Expandable text
+    implementation 'com.ms-square:expandableTextView:0.1.4'
+
     // Retrofit
     def retrofit_version = '2.9.0'
     implementation "com.squareup.retrofit2:retrofit:${retrofit_version}"
