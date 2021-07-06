@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/welcome_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/mulish_bold"
+        android:text="Hello,\n We are glad to have you back"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailField"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="12dp"
+        android:hint="Email address"
+        android:textColorHint="#4B4B58"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:boxStrokeColor="#818195"
+        app:boxStrokeErrorColor="#FF122E"
+        app:endIconDrawable="@drawable/ic_check_circle_24"
+        app:endIconMode="custom"
+        app:endIconTint="#4B4B58"
+        app:errorEnabled="true"
+        app:errorIconDrawable="@drawable/ic_cancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcome_text">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordField"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="12dp"
+        android:hint="Password"
+        android:textColorHint="#4B4B58"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:boxStrokeColor="#818195"
+        app:boxStrokeErrorColor="#FF122E"
+        app:endIconMode="password_toggle"
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/email_requirements_text">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/checkbox_rember_me"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Remember me"
+        android:textColor="#4B4B58"
+        app:layout_constraintStart_toStartOf="@id/passwordField"
+        app:layout_constraintTop_toBottomOf="@+id/password_requirement_text" />
+
+    <TextView
+        android:id="@+id/forgot_password_link"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/mulish_italic"
+        android:padding="8dp"
+        android:text="Forgot password?"
+        android:textColor="#3D68FF"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/checkbox_rember_me"
+        app:layout_constraintEnd_toEndOf="@+id/passwordField"
+        app:layout_constraintTop_toTopOf="@+id/checkbox_rember_me" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/login_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#FF3D57"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:text="Login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkbox_rember_me"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/no_account_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/mulish_regular"
+        android:text="Don’t have an account? "
+        android:textColor="#4B4B58"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login_btn" />
+
+    <TextView
+        android:id="@+id/register_today_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="Register today"
+        android:fontFamily="@font/mulish_regular"
+        android:textColor="#3D68FF"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/no_account_text"
+        app:layout_constraintStart_toEndOf="@+id/no_account_text" />
+
+    <TextView
+        android:id="@+id/email_requirements_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="@font/mulish_regular"
+        android:text="Email must contain the following elements
+        \n &#8226; Main email variable e.g @gmail.com, @yahoo.com \n &#8226; Right names"
+        android:textColor="#A5A5B3"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/emailField"
+        app:layout_constraintStart_toStartOf="@id/emailField"
+        app:layout_constraintTop_toBottomOf="@id/emailField" />
+
+    <TextView
+        android:id="@+id/password_requirement_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/mulish_regular"
+        android:text="Passwords must contain the following elements
+        \n &#8226; 1 or more lowercase letters
+        \n &#8226; 1 or more uppercase letters
+        \n &#8226; 1 or more numbers \n &#8226; Password must be between 8 and 10 characters"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/passwordField"
+        app:layout_constraintStart_toStartOf="@+id/passwordField"
+        app:layout_constraintTop_toBottomOf="@+id/passwordField" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
