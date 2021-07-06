@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView14"
         style="@style/TextStyleH2"
         android:layout_width="wrap_content"
@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView15"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -77,7 +77,7 @@
         app:layout_constraintTop_toTopOf="@+id/edittext_otp_3"
         app:layout_constraintWidth_percent=".1" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/text_resend_otp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -91,18 +91,18 @@
         app:layout_constraintTop_toBottomOf="@+id/edittext_otp_1"
         app:layout_constraintVertical_bias="0.3" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_otp_verify"
         style="@style/Button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/regular_view_sub_margins"
-        android:text="Button"
+        android:text="Verify"
         app:layout_constraintBottom_toTopOf="@+id/button_otp_cancel"
         app:layout_constraintEnd_toEndOf="@+id/button_otp_cancel"
         app:layout_constraintStart_toStartOf="@+id/button_otp_cancel" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_otp_cancel"
         style="@style/Button"
         android:layout_width="0dp"
