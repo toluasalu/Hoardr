@@ -20,7 +20,7 @@
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:srcCompat="@color/gray" />
+            tools:srcCompat="@color/text_shade_4" />
     </androidx.cardview.widget.CardView>
 
     <com.google.android.material.button.MaterialButton
@@ -46,9 +46,9 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/lato"
+        android:fontFamily="@font/lato_regular"
         android:text="8:57pm"
-        android:textColor="@color/text_color"
+        android:textColor="@color/text_shade_2"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -58,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:fontFamily="@font/lato"
+        android:fontFamily="@font/lato_regular"
         android:text="@string/name_place_holder"
         android:textColor="@color/black"
         android:textSize="16sp"

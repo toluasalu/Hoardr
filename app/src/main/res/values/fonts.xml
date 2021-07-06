@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Roboto Font Styles -->
+    <style name="RobotoRegular" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+    </style>
+
+    <!-- Lato Font Styles -->
+    <style name="LatoRegular" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/lato_regular</item>
+    </style>
+    <style name="LatoMedium" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/lato_medium</item>
+    </style>
+    <style name="LatoBold" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/lato_bold</item>
+    </style>
+
+    <!-- Mulish Font Styles -->
+    <style name="MulishLight" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/mulish_light</item>
+    </style>
+    <style name="MulishRegular" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/mulish_regular</item>
+    </style>
+    <style name="MulishBold" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/mulish_bold</item>
+    </style>
+    <style name="MulishBlack" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/mulish_black</item>
+    </style>
+
+    <!-- Text Styles -->
+    <style name="TextStyleH2" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/text_shade_2</item>
+        <item name="fontFamily">@font/mulish_bold</item>
+        <item name="android:textSize">25sp</item>
+        <item name="lineHeight">37.5sp</item>
+    </style>
+    <style name="TextStyleH5" parent="TextStyleH2">
+        <item name="android:textSize">20sp</item>
+        <item name="lineHeight">30sp</item>
+    </style>
+    <style name="TextStyleBody" parent="TextStyleH5">
+        <item name="fontFamily">@font/mulish_light</item>
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">24sp</item>
+    </style>
+    <style name="TextStyleSmall1" parent="TextStyleBody">
+        <item name="android:textColor">@color/text_shade_5</item>
+        <item name="fontFamily">@font/mulish_regular</item>
+        <item name="android:textSize">13sp</item>
+        <item name="lineHeight">19.5sp</item>
+    </style>
+    <style name="TextStyleSmall2" parent="TextStyleSmall1">
+        <item name="android:textSize">12sp</item>
+        <item name="lineHeight">18sp</item>
+    </style>
+    <style name="TextStyleSmall3" parent="TextStyleSmall2">
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">12sp</item>
+        <item name="lineHeight">14sp</item>
+    </style>
+</resources>
