@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SelectInterest2">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="20dp" />
+
+    <View
+        android:id="@+id/view_layout"
+        android:layout_width="match_parent"
+        android:layout_height="390dp"
+        android:layout_marginTop="16dp"
+        android:background="#F6F3F3"
+        android:padding="20dp"
+        app:layout_constraintBottom_toTopOf="@id/CheckedBox_Layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/tv_Select2..."
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:text="Select your interest"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/search_interest2"
+        app:layout_constraintEnd_toStartOf="@id/guideline9"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintTop_toTopOf="@+id/view_layout"
+        app:layout_constraintVertical_bias="0.19999999"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/search_interest2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@id/linear1"
+        app:layout_constraintEnd_toStartOf="@+id/guideline9"
+        app:layout_constraintStart_toStartOf="@id/guideline6"
+        app:layout_constraintTop_toBottomOf="@id/tv_Select2...">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:hint="Search here"
+            android:padding="10dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/search_interest2"
+        app:layout_constraintEnd_toEndOf="@id/search_interest2"
+        app:layout_constraintHorizontal_bias="0.92"
+        app:layout_constraintStart_toStartOf="@id/search_interest2"
+        app:layout_constraintTop_toTopOf="@id/search_interest2" />
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/Linear2"
+        app:layout_constraintEnd_toStartOf="@id/guideline9"
+        app:layout_constraintStart_toStartOf="@id/guideline6"
+        app:layout_constraintTop_toBottomOf="@id/search_interest2">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/Cad_Furniture"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            app:cardBackgroundColor="#FAC542"
+            app:cardCornerRadius="200dp"
+            app:layout_constraintBottom_toBottomOf="@id/linear1"
+            app:layout_constraintEnd_toEndOf="@id/linear1"
+            app:layout_constraintStart_toStartOf="@id/linear1"
+            app:layout_constraintTop_toTopOf="@id/linear1"
+            tools:layout_editor_absoluteX="125dp"
+            tools:layout_editor_absoluteY="641dp">
+
+            <TextView
+                android:id="@+id/tv_furniture"
+                android:layout_width="match_parent"
+                android:layout_height="78dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Furniture"
+                android:textColor="@color/black" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/Cad_Machinary"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            app:cardBackgroundColor="#FAC542"
+            app:cardCornerRadius="200dp"
+            app:layout_constraintBottom_toBottomOf="@id/linear1"
+            app:layout_constraintEnd_toEndOf="@id/linear1"
+            app:layout_constraintStart_toStartOf="@id/linear1"
+            app:layout_constraintTop_toTopOf="@id/linear1"
+            tools:layout_editor_absoluteX="125dp"
+            tools:layout_editor_absoluteY="641dp">
+
+            <TextView
+                android:id="@+id/tv_Machinery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Machinery"
+                android:textColor="@color/black" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/Cad_Office_eqiup..."
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            app:cardBackgroundColor="#FAC542"
+            app:cardCornerRadius="200dp"
+            app:layout_constraintBottom_toBottomOf="@id/linear1"
+            app:layout_constraintEnd_toEndOf="@id/linear1"
+            app:layout_constraintStart_toStartOf="@id/linear1"
+            app:layout_constraintTop_toTopOf="@id/linear1"
+            tools:layout_editor_absoluteX="125dp"
+            tools:layout_editor_absoluteY="641dp">
+
+            <TextView
+                android:id="@+id/tv_Office_equip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Office equipment"
+                android:textColor="@color/black" />
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Linear2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/Linear3"
+        app:layout_constraintEnd_toStartOf="@+id/guideline9"
+        app:layout_constraintStart_toStartOf="@id/guideline6"
+        app:layout_constraintTop_toBottomOf="@id/linear1">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/Cad_Home_equip"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            app:cardBackgroundColor="#FAC542"
+            app:cardCornerRadius="200dp"
+            app:layout_constraintBottom_toBottomOf="@id/Linear2"
+            app:layout_constraintEnd_toEndOf="@id/Linear2"
+            app:layout_constraintStart_toStartOf="@id/Linear2"
+            app:layout_constraintTop_toTopOf="@id/Linear2"
+            tools:layout_editor_absoluteX="125dp"
+            tools:layout_editor_absoluteY="641dp">
+
+            <TextView
+                android:id="@+id/tv_Home_equip"
+                android:layout_width="match_parent"
+                android:layout_height="78dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Home equipment"
+                android:textColor="@color/black" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/Cad_Toiletries"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            app:cardBackgroundColor="#FAC542"
+            app:cardCornerRadius="200dp"
+            app:layout_constraintBottom_toBottomOf="@id/Linear2"
+            app:layout_constraintEnd_toEndOf="@id/Linear2"
+            app:layout_constraintStart_toStartOf="@id/Linear2"
+            app:layout_constraintTop_toTopOf="@id/Linear2"
+            tools:layout_editor_absoluteX="125dp"
+            tools:layout_editor_absoluteY="641dp">
+
+            <TextView
+                android:id="@+id/tv_toilet.."
+                android:layout_width="match_parent"
+                android:layout_height="78dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Toiletries"
+                android:textColor="@color/black" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/Cad_game"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            app:cardBackgroundColor="#FAC542"
+            app:cardCornerRadius="200dp"
+            app:layout_constraintBottom_toBottomOf="@id/Linear2"
+            app:layout_constraintEnd_toEndOf="@id/Linear2"
+            app:layout_constraintStart_toStartOf="@id/Linear2"
+            app:layout_constraintTop_toTopOf="@id/Linear2"
+            tools:layout_editor_absoluteX="125dp"
+            tools:layout_editor_absoluteY="641dp">
+
+            <TextView
+                android:id="@+id/tv_game"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Games"
+                android:textColor="@color/black" />
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Linear3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/Linear4"
+        app:layout_constraintEnd_toStartOf="@+id/guideline9"
+        app:layout_constraintStart_toStartOf="@id/guideline6"
+        app:layout_constraintTop_toBottomOf="@id/Linear2">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/Cad_Wood"
+            android:layout_width="78dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            app:cardBackgroundColor="#FAC542"
+            app:cardCornerRadius="200dp"
+            app:layout_constraintBottom_toBottomOf="@id/Linear3"
+            app:layout_constraintEnd_toEndOf="@id/Linear3"
+            app:layout_constraintStart_toStartOf="@id/Linear3"
+            app:layout_constraintTop_toTopOf="@id/Linear3"
+            tools:layout_editor_absoluteX="125dp"
+            tools:layout_editor_absoluteY="641dp">
+
+            <TextView
+                android:id="@+id/tv_Wood"
+                android:layout_width="112dp"
+                android:layout_height="78dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Wood materials"
+                android:textColor="@color/black" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/Cad_Art"
+            android:layout_width="78dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            app:cardBackgroundColor="#FAC542"
+            app:cardCornerRadius="200dp"
+            app:layout_constraintBottom_toBottomOf="@id/Linear3"
+            app:layout_constraintEnd_toEndOf="@id/Linear3"
+            app:layout_constraintStart_toStartOf="@id/Linear3"
+            app:layout_constraintTop_toTopOf="@id/Linear3"
+            tools:layout_editor_absoluteX="125dp"
+            tools:layout_editor_absoluteY="641dp">
+
+            <TextView
+                android:id="@+id/tv_Art"
+                android:layout_width="109dp"
+                android:layout_height="78dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Art frames"
+                android:textColor="@color/black" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/Cad_cloth"
+            android:layout_width="78dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            app:cardBackgroundColor="#FAC542"
+            app:cardCornerRadius="200dp"
+            app:layout_constraintBottom_toBottomOf="@id/Linear3"
+            app:layout_constraintEnd_toEndOf="@id/Linear3"
+            app:layout_constraintStart_toStartOf="@id/Linear3"
+            app:layout_constraintTop_toTopOf="@id/Linear3"
+            tools:layout_editor_absoluteX="125dp"
+            tools:layout_editor_absoluteY="641dp">
+
+            <TextView
+                android:id="@+id/tv_cloth"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Cloth"
+                android:textColor="@color/black" />
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Linear4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/view_layout"
+        app:layout_constraintEnd_toStartOf="@id/guideline9"
+        app:layout_constraintStart_toStartOf="@id/guideline6"
+        app:layout_constraintTop_toBottomOf="@id/Linear3">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/Cad_GymEquip"
+            android:layout_width="78dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            app:cardBackgroundColor="#FAC542"
+            app:cardCornerRadius="200dp"
+            app:layout_constraintBottom_toBottomOf="@id/Linear4"
+            app:layout_constraintEnd_toEndOf="@id/Linear4"
+            app:layout_constraintStart_toStartOf="@id/Linear4"
+            app:layout_constraintTop_toTopOf="@id/Linear4"
+            tools:layout_editor_absoluteX="125dp"
+            tools:layout_editor_absoluteY="641dp">
+
+            <TextView
+                android:id="@+id/tv_GymEquip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Gym equipment"
+                android:textColor="@color/black" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/Cad_Plastic"
+            android:layout_width="78dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            app:cardBackgroundColor="#FAC542"
+            app:cardCornerRadius="200dp"
+            app:layout_constraintBottom_toBottomOf="@id/Linear4"
+            app:layout_constraintEnd_toEndOf="@id/Linear4"
+            app:layout_constraintStart_toStartOf="@id/Linear4"
+            app:layout_constraintTop_toTopOf="@id/Linear4"
+            tools:layout_editor_absoluteX="125dp"
+            tools:layout_editor_absoluteY="641dp">
+
+            <TextView
+                android:id="@+id/tv_Plastic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Plastic"
+                android:textColor="@color/black" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/Cad_Elect"
+            android:layout_width="78dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            app:cardBackgroundColor="#FAC542"
+            app:cardCornerRadius="200dp"
+            app:layout_constraintBottom_toBottomOf="@id/Linear4"
+            app:layout_constraintEnd_toEndOf="@id/Linear4"
+            app:layout_constraintStart_toStartOf="@id/Linear4"
+            app:layout_constraintTop_toTopOf="@id/Linear4"
+            tools:layout_editor_absoluteX="125dp"
+            tools:layout_editor_absoluteY="641dp">
+
+            <TextView
+                android:id="@+id/tv_Elect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Electronics"
+                android:textColor="@color/black" />
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/CheckedBox_Layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintBottom_toTopOf="@id/btn_NextInterest2"
+        app:layout_constraintEnd_toStartOf="@id/guideline9"
+        app:layout_constraintStart_toStartOf="@id/guideline6"
+        app:layout_constraintTop_toBottomOf="@id/view_layout">
+
+        <LinearLayout
+            android:id="@+id/CheckedBox1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@id/CheckedBox_Layout"
+            app:layout_constraintEnd_toStartOf="@id/CheckedBox_Layout"
+            app:layout_constraintStart_toStartOf="@id/CheckedBox_Layout"
+            app:layout_constraintTop_toBottomOf="@id/CheckedBox_Layout">
+
+            <CheckBox
+                android:id="@+id/checkBox_tv_Furniture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Furniture"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/checkBox_tv_OfficeEquip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Office equipments"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/checkBox_tv_HomeEquip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Home equipments"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/checkBox_tv_game"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Games"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/CheckedBox2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@id/CheckedBox_Layout"
+            app:layout_constraintEnd_toEndOf="@id/CheckedBox_Layout"
+            app:layout_constraintStart_toStartOf="@id/CheckedBox_Layout"
+            app:layout_constraintTop_toTopOf="@id/CheckedBox_Layout">
+
+            <CheckBox
+                android:id="@+id/checkBox_tv_Machine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Machinery"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/checkBox_tv_Toiletries"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Toiletries"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/checkBox_tv_GymEquip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gym equipments"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/checkBox_tv_Plastic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Plastic"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_NextInterest2"
+        android:layout_width="0dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="50dp"
+        android:text="Next"
+        app:backgroundTint="#F6071C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline9"
+        app:layout_constraintStart_toStartOf="@id/guideline6"
+        app:layout_constraintTop_toBottomOf="@id/CheckedBox_Layout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
