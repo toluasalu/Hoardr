@@ -1,86 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/regular_view_sub_margins">
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/materialTextView4"
-        style="@style/TextStyleH5"
+        android:id="@+id/textView18"
+        style="@style/TextStyleBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/home_header_margin"
-        android:text="Make your items visible. 2"
-        app:layout_constraintEnd_toStartOf="@+id/textView20"
+        android:text="Title*"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView22"
-        style="@style/TextStyleH5"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinput_title_3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="/3"
-        android:textColor="@color/text_shade_5"
-        app:layout_constraintBottom_toBottomOf="@+id/materialTextView"
+        android:layout_marginTop="@dimen/regular_view_sub_margins"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/materialTextView4"
-        app:layout_constraintTop_toTopOf="@+id/materialTextView4" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView18">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Title" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/materialTextView5"
+        android:id="@+id/textView16"
         style="@style/TextStyleBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Add Image*"
+        android:layout_marginTop="@dimen/home_content_margin"
+        android:text="Description*"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialTextView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textinput_title_3" />
 
-    <TextView
-        android:id="@+id/textView21"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinput_describe_item"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Add at least 1 image but not more than 4 images"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/regular_view_sub_margins"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="spread"
+        app:layout_constraintHeight_percent=".2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialTextView5" />
+        app:layout_constraintTop_toBottomOf="@+id/textView16">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="0dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView21"
-        tools:itemCount="1"
-        tools:listitem="@layout/item_exchange_option">
-
-    </androidx.recyclerview.widget.RecyclerView>
-
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Max image size is 5mb\nSupported image formats are *.jpg and *.png"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Describe Item"
+            android:inputType="textMultiLine" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/materialTextView6"
+        android:id="@+id/materialTextView8"
         style="@style/TextStyleBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="How would you like to list this item?*"
+        android:layout_marginTop="16dp"
+        android:text="Items to exchange for*"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
 
     <CheckBox
         android:id="@+id/checkBox"
@@ -91,7 +76,7 @@
         app:layout_constraintEnd_toStartOf="@+id/checkBox2"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialTextView6" />
+        app:layout_constraintTop_toBottomOf="@+id/materialTextView9" />
 
     <CheckBox
         android:id="@+id/checkBox2"
@@ -112,68 +97,65 @@
         app:layout_constraintTop_toTopOf="@+id/checkBox2" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/materialTextView3"
+        android:id="@+id/materialTextView9"
         style="@style/TextStyleBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Price*"
+        android:layout_marginTop="16dp"
+        android:text="How would you like to list this item?*"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+        app:layout_constraintTop_toBottomOf="@+id/textinput_describe_item" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textinput_price"
+        android:id="@+id/textinput_exchange_for"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialTextView3">
+        app:layout_constraintTop_toBottomOf="@+id/materialTextView8">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter Price" />
+            android:hint="Enter items (e.g Ring light or Headphone)"
+            android:inputType="textAutoComplete" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/materialTextView7"
+        android:id="@+id/materialTextView10"
         style="@style/TextStyleBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Enter personal details*"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textinput_price" />
-
-    <CheckBox
-        android:id="@+id/checkBox4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Keep me anonymous"
-        app:layout_constraintEnd_toStartOf="@+id/checkBox5"
+        android:text="How would you like to list this item?*"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialTextView7" />
+        app:layout_constraintTop_toBottomOf="@+id/textinput_exchange_for" />
 
-    <CheckBox
-        android:id="@+id/checkBox5"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinput_price_3"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Use name"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/checkBox4"
-        app:layout_constraintTop_toTopOf="@+id/checkBox4" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialTextView10">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter price" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/button_add_item_continue"
+        android:id="@+id/button_add_item_upload"
         style="@style/Button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Continue"
+        android:layout_marginTop="32dp"
+        android:text="Upload Item"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox4" />
+        app:layout_constraintTop_toBottomOf="@+id/textinput_price_3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
