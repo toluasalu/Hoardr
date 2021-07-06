@@ -100,6 +100,6 @@
         app:layout_constraintStart_toStartOf="@+id/guideline_Start"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
-        app:srcCompat="@drawable/ic_home_black_24dp" />
+        app:srcCompat="@drawable/vector_people" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

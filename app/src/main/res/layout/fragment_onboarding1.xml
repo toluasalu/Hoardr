@@ -91,7 +91,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.36"
         app:layout_constraintVertical_chainStyle="packed"
-        app:srcCompat="@drawable/ic_home_black_24dp" />
+        app:srcCompat="@drawable/vector_box" />
 
     <ImageView
         android:id="@+id/imageView2"

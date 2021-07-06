@@ -32,18 +32,16 @@
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
-        app:srcCompat="@drawable/ic_home_black_24dp" />
+        app:srcCompat="@drawable/vector_hammer" />
 
     <TextView
         android:id="@+id/tv_Place_ABid..."
+        style="@style/TextStyleH2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
-        android:fontFamily="sans-serif-medium"
         android:includeFontPadding="true"
         android:text="Place a bid on your old\n items"
-        android:textColor="#302E2E"
-        android:textSize="28sp"
         android:textStyle="normal"
         app:layout_constraintBottom_toTopOf="@id/tv_That_Precious..."
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
@@ -52,11 +50,11 @@
 
     <TextView
         android:id="@+id/tv_That_Precious..."
+        style="@style/TextStyleBody"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="19dp"
         android:text="That precious item can give you an even better earning than you have imagined, get onboard today and start earning. "
-        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@id/btn_Declutter"
         app:layout_constraintEnd_toEndOf="@id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline2"

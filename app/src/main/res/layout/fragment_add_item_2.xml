@@ -17,14 +17,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView22"
         style="@style/TextStyleH5"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="/3"
+        android:text="/2"
         android:textColor="@color/text_shade_5"
-        app:layout_constraintBottom_toBottomOf="@+id/materialTextView"
+        app:layout_constraintBottom_toBottomOf="@+id/materialTextView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/materialTextView4"
         app:layout_constraintTop_toTopOf="@+id/materialTextView4" />
@@ -39,7 +39,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/materialTextView4" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView21"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -52,7 +52,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="0dp"
-        android:layout_height="20dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,7 +62,7 @@
 
     </androidx.recyclerview.widget.RecyclerView>
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView23"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -122,6 +122,7 @@
         app:layout_constraintTop_toBottomOf="@+id/checkBox" />
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/TextInputLayout"
         android:id="@+id/textinput_price"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -131,6 +132,7 @@
         app:layout_constraintTop_toBottomOf="@+id/materialTextView3">
 
         <com.google.android.material.textfield.TextInputEditText
+            style="@style/EditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter Price" />
