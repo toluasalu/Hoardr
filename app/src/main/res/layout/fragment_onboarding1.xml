@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="24dp"
     tools:context=".Onboarding1">
 
 
@@ -54,12 +55,12 @@
 
     <Button
         android:id="@+id/btn_NextOnboard1"
-        android:layout_width="373dp"
-        android:layout_height="62dp"
+        style="@style/Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="8dp"
         android:text="NEXT"
-        app:backgroundTint="#F6071C"
         app:layout_constraintBottom_toTopOf="@id/tv_SkipOnboard1"
         app:layout_constraintEnd_toStartOf="@id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -96,13 +97,13 @@
         android:id="@+id/imageView2"
         android:layout_width="27dp"
         android:layout_height="17dp"
-        app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
         app:layout_constraintBottom_toBottomOf="@id/tv_SkipOnboard1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="@id/tv_SkipOnboard1"
         app:layout_constraintTop_toTopOf="@id/tv_SkipOnboard1"
-        app:layout_constraintVertical_bias="0.538"/>
+        app:layout_constraintVertical_bias="0.538"
+        app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
