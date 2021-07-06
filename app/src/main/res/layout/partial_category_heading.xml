@@ -6,7 +6,7 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/text_category_heading"
-        style="@style/TextHeading"
+        style="@style/TextStyleH5"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Categories"
@@ -16,6 +16,7 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/text_category_view_all"
+        style="@style/TextStyleSmall1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -34,5 +35,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/text_category_view_all"
         app:layout_constraintTop_toTopOf="@+id/text_category_view_all"
-        app:srcCompat="@drawable/ic_baseline_keyboard_arrow_right_24" />
+        app:srcCompat="@drawable/ic_baseline_keyboard_arrow_right_24"
+        app:tint="@color/text_shade_5" />
 </androidx.constraintlayout.widget.ConstraintLayout>

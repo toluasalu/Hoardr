@@ -8,7 +8,7 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView8"
-        style="@style/TextHeading"
+        style="@style/TextStyleH5"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/home_header_margin"
@@ -29,8 +29,9 @@
         tools:itemCount="1"
         tools:listitem="@layout/item_exchange_option" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_proceed"
+        style="@style/Button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/home_header_margin"

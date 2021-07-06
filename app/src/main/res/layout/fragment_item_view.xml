@@ -9,10 +9,11 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/text_item_name"
-        style="@style/TextHeading"
+        style="@style/TextStyleH5"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/home_header_margin"
+        app:fontFamily="@font/lato_bold"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -31,16 +32,18 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView7"
+        style="@style/TextStyleSmall1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        tools:text="posted by "
         app:layout_constraintBottom_toBottomOf="@+id/image_item_owner"
         app:layout_constraintStart_toEndOf="@+id/image_item_owner"
-        app:layout_constraintTop_toTopOf="@+id/image_item_owner" />
+        app:layout_constraintTop_toTopOf="@+id/image_item_owner"
+        tools:text="posted by " />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/text_item_owner"
+        style="@style/TextStyleSmall1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Anonymous"
@@ -58,7 +61,7 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/text_item_price"
-        style="@style/TextHeading"
+        style="@style/TextStyleBody"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:background="@color/hot_yellow"
@@ -73,7 +76,7 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView10"
-        style="@style/TextHeading"
+        style="@style/TextStyleH5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/home_header_margin"
@@ -83,19 +86,21 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/text_item_description"
+        style="@style/TextStyleBody"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/home_content_margin"
         android:layout_marginEnd="@dimen/regular_view_sub_margins"
-        tools:text="@string/lorem_ipsum"
         android:textAlignment="textStart"
+        android:textColor="@color/text_shade_5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        tools:text="@string/lorem_ipsum" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView12"
-        style="@style/TextHeading"
+        style="@style/TextStyleH5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/home_header_margin"

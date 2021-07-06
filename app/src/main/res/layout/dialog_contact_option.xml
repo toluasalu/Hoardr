@@ -7,7 +7,7 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView6"
-        style="@style/TextHeading"
+        style="@style/TextStyleH5"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/home_header_margin"
@@ -29,7 +29,8 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6"
         app:layout_constraintWidth_default="percent"
         app:layout_constraintWidth_percent=".15"
-        app:srcCompat="@drawable/ic_baseline_local_phone_24" />
+        app:srcCompat="@drawable/ic_baseline_local_phone_24"
+        app:tint="@color/text_shade_2" />
 
     <ImageButton
         android:id="@+id/button_contact_message"
@@ -42,6 +43,7 @@
         app:layout_constraintTop_toTopOf="@+id/button_contact_call"
         app:layout_constraintWidth_default="percent"
         app:layout_constraintWidth_percent=".15"
-        app:srcCompat="@drawable/ic_baseline_message_24" />
+        app:srcCompat="@drawable/ic_message"
+        app:tint="@color/text_shade_2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

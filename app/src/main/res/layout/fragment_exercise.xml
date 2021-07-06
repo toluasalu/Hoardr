@@ -7,7 +7,7 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView9"
-        style="@style/TextHeading"
+        style="@style/TextStyleH5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/home_header_margin"
@@ -18,16 +18,19 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView11"
+        style="@style/TextStyleBody"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/home_content_margin"
-        android:text="Be sincere with yout answers and the owner would get back to you shortly"
+        android:text="Be sincere with your answers and the owner would get back to you shortly"
+        android:textColor="@color/text_shade_4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView13"
+        style="@style/TextStyleBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/home_header_margin"
@@ -52,6 +55,7 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView16"
+        style="@style/TextStyleBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/home_content_margin"
@@ -79,6 +83,7 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView17"
+        style="@style/TextStyleBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/home_content_margin"
@@ -103,6 +108,7 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView18"
+        style="@style/TextStyleBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/home_content_margin"
@@ -127,6 +133,7 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView19"
+        style="@style/TextStyleBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/home_content_margin"
@@ -149,8 +156,9 @@
             android:hint="@string/textinput_hint" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_submit"
+        style="@style/Button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"

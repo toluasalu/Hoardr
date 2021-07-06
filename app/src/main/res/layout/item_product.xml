@@ -55,40 +55,44 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/text_item_product_name"
+            style="@style/TextStyleSmall2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            tools:text="Blue Gucci Shirt"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@color/black"
+            android:textColor="@color/text_shade_2"
             app:layout_constraintBottom_toTopOf="@+id/image_item_product_owner"
             app:layout_constraintEnd_toEndOf="@+id/text_item_product_amount"
-            app:layout_constraintStart_toStartOf="@+id/image_item_product_owner" />
+            app:layout_constraintStart_toStartOf="@+id/image_item_product_owner"
+            tools:text="Blue Gucci Shirt" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/text_item_product_owner"
+            style="@style/TextStyleSmall2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            tools:text="Anonymous"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="?attr/colorPrimary"
             app:layout_constraintBottom_toBottomOf="@+id/image_item_product_owner"
             app:layout_constraintEnd_toStartOf="@+id/text_item_product_amount"
             app:layout_constraintStart_toEndOf="@+id/image_item_product_owner"
-            app:layout_constraintTop_toTopOf="@+id/image_item_product_owner" />
+            app:layout_constraintTop_toTopOf="@+id/image_item_product_owner"
+            tools:text="Anonymous" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/text_item_product_amount"
+            style="@style/TextStyleSmall2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            tools:text="N 2,500"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintBottom_toBottomOf="@+id/image_item_product_owner"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintTop_toTopOf="@+id/image_item_product_owner" />
+            app:layout_constraintTop_toTopOf="@+id/image_item_product_owner"
+            tools:text="N 2,500" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline3"

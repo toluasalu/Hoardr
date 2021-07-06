@@ -15,21 +15,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.6"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:srcCompat="@drawable/vector_successful_test" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/text_success_info"
+        style="@style/TextStyleBody"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        tools:text="Test successfully sent, the owner of the item would reach out to you soon"
+        app:fontFamily="@font/lato_regular"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6" />
+        app:layout_constraintVertical_bias="0.6"
+        tools:text="Test successfully sent, the owner of the item would reach out to you soon" />
 
     <Button
         android:id="@+id/button_continue"
+        style="@style/Button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/home_header_margin"
