@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SelectInterest1">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="20dp" />
+
+    <TextView
+        android:id="@+id/tv_Select..."
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Select your interest"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/tv_Let_Everyone..."
+        app:layout_constraintEnd_toStartOf="@+id/guideline8"
+        app:layout_constraintStart_toStartOf="@id/guideline7"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.72"
+        app:layout_constraintVertical_chainStyle="spread" />
+
+    <TextView
+        android:id="@+id/tv_Let_Everyone..."
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:text="Let everyone know what your interests are by adding it to your profile"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/search_interest"
+        app:layout_constraintEnd_toStartOf="@id/guideline8"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toBottomOf="@id/tv_Select..." />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/search_interest"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@id/CheckBox_Layout"
+        app:layout_constraintEnd_toStartOf="@id/guideline8"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/guideline7"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Let_Everyone...">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@color/white"
+            android:hint="Search here"
+            android:paddingTop="10dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <SearchView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/search_interest"
+        app:layout_constraintEnd_toEndOf="@id/search_interest"
+        app:layout_constraintHorizontal_bias="0.92"
+        app:layout_constraintStart_toStartOf="@id/search_interest"
+        app:layout_constraintTop_toTopOf="@id/search_interest" />
+
+    <LinearLayout
+        android:id="@+id/CheckBox_Layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintBottom_toTopOf="@id/btn_NextInterest1"
+        app:layout_constraintEnd_toStartOf="@id/guideline8"
+        app:layout_constraintStart_toStartOf="@id/guideline7"
+        app:layout_constraintTop_toBottomOf="@id/search_interest">
+
+        <LinearLayout
+            android:id="@+id/unchecked_Box1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/UncheckBox_tv_Furniture"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Furniture"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/UncheckBox_tv_OfficeEquip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Office equipments"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/UncheckBox_tv_HomeEquip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Home equipments"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/UncheckBox_tv_GymEquip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gym equipments"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/UncheckBox_tv_Elect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Electronics"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/UncheckBox_tv_Wood"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Wood materials"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/unchecked_Box2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/UncheckBox_tv_Machinery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Machinery"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/UncheckBox_tv_Toiletries"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Toiletries"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/UncheckBox_tv_Game"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Game"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/UncheckBox_tv_Plastic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Plastic"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/UncheckBox_tv_Art"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Art frames"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/UncheckBox_tv_Cloth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cloth"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_NextInterest1"
+        style="@style/Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline8"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toBottomOf="@id/CheckBox_Layout" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/regular_view_sub_margins"
+    android:paddingEnd="0sp">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/text_item_name"
+        style="@style/TextStyleH5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/home_header_margin"
+        app:fontFamily="@font/lato_bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Nova can leather bag" />
+
+    <ImageView
+        android:id="@+id/image_item_owner"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_item_name"
+        app:layout_constraintWidth_percent=".1"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textView7"
+        style="@style/TextStyleSmall1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/image_item_owner"
+        app:layout_constraintStart_toEndOf="@+id/image_item_owner"
+        app:layout_constraintTop_toTopOf="@+id/image_item_owner"
+        tools:text="posted by " />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/text_item_owner"
+        style="@style/TextStyleSmall1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Anonymous"
+        app:layout_constraintBottom_toBottomOf="@+id/textView7"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toEndOf="@+id/textView7"
+        app:layout_constraintTop_toTopOf="@+id/textView7" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/text_item_price"
+        style="@style/TextStyleBody"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@color/hot_yellow"
+        android:gravity="center"
+        android:padding="@dimen/regular_view_sub_margins"
+        android:paddingStart="@dimen/regular_view_margins"
+        android:paddingEnd="@dimen/regular_view_margins"
+        android:text="N 2,500"
+        app:layout_constraintBottom_toBottomOf="@+id/image_item_owner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/text_item_name" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textView10"
+        style="@style/TextStyleH5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/home_header_margin"
+        android:text="Description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/text_item_description"
+        style="@style/TextStyleBody"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/home_content_margin"
+        android:layout_marginEnd="@dimen/regular_view_sub_margins"
+        android:textAlignment="textStart"
+        android:textColor="@color/text_shade_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        tools:text="@string/lorem_ipsum" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textView12"
+        style="@style/TextStyleH5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/home_header_margin"
+        android:text="Similar Items"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_item_description" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_similar_items"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/home_content_margin"
+        app:layout_constraintEnd_toEndOf="@+id/text_item_description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12"
+        tools:itemCount="1"
+        tools:listitem="@layout/item_product" />
+
+    <Button
+        android:id="@+id/button_action"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/home_header_margin"
+        tools:text="Talk To Owner"
+        app:layout_constraintEnd_toEndOf="@+id/list_similar_items"
+        app:layout_constraintStart_toStartOf="@+id/list_similar_items"
+        app:layout_constraintTop_toBottomOf="@+id/list_similar_items" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
