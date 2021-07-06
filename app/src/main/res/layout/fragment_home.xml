@@ -3,20 +3,203 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/regular_view_sub_margins"
     tools:context=".ui.home.HomeFragment">
 
-    <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/text_home_greeting"
+        style="@style/TextStyleH5"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginTop="@dimen/home_header_margin"
+        app:layout_constraintBottom_toTopOf="@+id/text_home_time_greeting"
+        app:layout_constraintEnd_toStartOf="@+id/button_home_register"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Hello Dasilva," />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/text_home_time_greeting"
+        style="@style/TextStyleSmall1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/text_home_greeting"
+        app:layout_constraintTop_toBottomOf="@+id/text_home_greeting"
+        tools:text="Good evening" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_home_register"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:textAppearance="@style/TextStyleSmall1"
+        app:layout_constraintBottom_toBottomOf="@+id/text_home_time_greeting"
+        app:layout_constraintEnd_toStartOf="@+id/image_home_notifications"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@+id/text_home_greeting"
+        app:layout_constraintTop_toTopOf="@+id/text_home_greeting" />
+
+    <ImageView
+        android:id="@+id/image_home_notifications"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/button_home_register"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button_home_register"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_notifications_black_24dp"
+        app:tint="@color/text_shade_2" />
+
+    <include
+        android:id="@+id/search_items"
+        layout="@layout/partial_search_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/text_home_time_greeting" />
+
+    <include
+        android:id="@+id/include_home_categories_header"
+        layout="@layout/partial_category_heading"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_items" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_home_categories"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/home_content_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include_home_categories_header"
+        tools:itemCount="1"
+        tools:listitem="@layout/item_home_category" />
+
+    <include
+        android:id="@+id/include_home_new_items_header"
+        layout="@layout/partial_category_heading"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/list_home_categories" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_home_new_items"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include_home_new_items_header"
+        tools:itemCount="1"
+        tools:listitem="@layout/item_product" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_hero"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:paddingStart="@dimen/regular_view_margins"
+        android:paddingTop="@dimen/regular_view_sub_margins"
+        android:paddingEnd="@dimen/regular_view_margins"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/list_home_new_items">
+
+        <ImageView
+            android:id="@+id/image_hero"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
+        <Button
+            android:id="@+id/button_view_free_items"
+            style="@style/Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/regular_view_sub_margins"
+            android:layout_marginBottom="@dimen/regular_view_sub_margins"
+            android:text="View all free items"
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextStyleSmall1"
+            android:textColor="@color/text_shade_2"
+            app:backgroundTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_hero_info" />
+
+        <TextView
+            android:id="@+id/text_hero_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mulish_black"
+            android:text="Connect with the largest markets"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/text_hero_info"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_hero_info"
+            style="@style/TextAppearance.MaterialComponents.Subtitle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mulish_regular"
+            android:text="Meet the right people and have an exciting time getting to know them."
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/button_view_free_items"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_hero_header" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        android:id="@+id/include_home_favourite_items_header"
+        layout="@layout/partial_category_heading"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/home_header_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_hero" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_home_favourite_items"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/home_content_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include_home_favourite_items_header"
+        tools:itemCount="1"
+        tools:listitem="@layout/item_product" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
