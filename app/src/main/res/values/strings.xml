@@ -3,7 +3,6 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-
     <string name="back">back</string>
     <string name="security_settings">Security Settings</string>
     <string name="biometrics">Biometrics</string>
@@ -37,5 +36,4 @@ Turpis nisl at placerat eget consequat id. Bibendum amet, purus et, arcu. Enim s
     <string name="name_place_holder">Osemudiamen Itua</string>
     <string name="placeholder_message_content">Welcome, Joel. I really look \nforward to meeting you at this ...</string>
     <string name="textinput_hint">Write here</string>
-
 </resources>
