@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.zuri.pjt_95_hoardr.R
@@ -13,7 +14,7 @@ import com.zuri.pjt_95_hoardr.databinding.FragmentRegistrationBinding
 
 class RegistrationFragment : Fragment() {
     private var _binding: FragmentRegistrationBinding? = null
-
+    private val sharedViewModel: RegistrationViewModel by activityViewModels()
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -29,6 +30,7 @@ class RegistrationFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding.loginLink.setOnClickListener {
             loginUser(it)
         }
