@@ -96,7 +96,7 @@
         style="@style/Button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/regular_view_sub_margins"
+        android:layout_marginBottom="@dimen/view_padding"
         android:text="Verify"
         app:layout_constraintBottom_toTopOf="@+id/button_otp_cancel"
         app:layout_constraintEnd_toEndOf="@+id/button_otp_cancel"

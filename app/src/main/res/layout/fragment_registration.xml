@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/regular_view_sub_margins"
+    android:padding="@dimen/view_padding"
     tools:context=".ui.registration.RegistrationFragment">
 
 

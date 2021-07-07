@@ -1,4 +1,4 @@
-package com.zuri.pjt_95_hoardr
+package com.zuri.pjt_95_hoardr.utils
 
 import android.graphics.Rect
 import android.view.View

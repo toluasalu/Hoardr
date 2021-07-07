@@ -3,8 +3,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
-    <dimen name="regular_view_margins">16sp</dimen>
-    <dimen name="regular_view_sub_margins">8sp</dimen>
+    <dimen name="view_padding">16sp</dimen>
 
     <!-- Home Dimensions -->
     <dimen name="home_header_margin">24sp</dimen>

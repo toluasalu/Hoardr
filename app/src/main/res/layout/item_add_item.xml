@@ -41,7 +41,7 @@
             style="@style/TextStyleSmall1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/regular_view_sub_margins"
+            android:layout_marginTop="@dimen/view_padding"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/text_add_item_title"

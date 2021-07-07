@@ -9,9 +9,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zuri.pjt_95_hoardr.R
-import com.zuri.pjt_95_hoardr.RecyclerAdapter
 import com.zuri.pjt_95_hoardr.databinding.FragmentHomeBinding
 import com.zuri.pjt_95_hoardr.databinding.ItemHomeCategoryBinding
+import com.zuri.pjt_95_hoardr.utils.RecyclerAdapter
 
 class HomeFragment : Fragment() {
 
@@ -41,11 +41,6 @@ class HomeFragment : Fragment() {
             it.textCategoryViewAll.visibility = View.GONE
             it.imageCategoryViewAll.visibility = View.GONE
         }
-        // load the category entries and images and display them
-        val adapter = CategoriesAdapter()
-        listHomeCategories.adapter = adapter
-        listHomeCategories.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        listHomeCategories.addItemDecoration(adapter.EqualSpaceItemDecoration())
 
         /**
          * initialize newly added items
@@ -63,6 +58,16 @@ class HomeFragment : Fragment() {
 
         buttonHomeRegister.setOnClickListener {
             findNavController().navigate(R.id.action_navigation_home_to_itemDetailFragment)
+        }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        with(binding){
+            // load the category entries and images and display them
+            val adapter = CategoriesAdapter()
+            listHomeCategories.adapter = adapter
+            listHomeCategories.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            listHomeCategories.addItemDecoration(adapter.EqualSpaceItemDecoration())
         }
     }
 

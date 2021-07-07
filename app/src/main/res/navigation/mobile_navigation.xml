@@ -3,56 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/onboardingFragment">
 
-    <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.zuri.pjt_95_hoardr.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
-
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.zuri.pjt_95_hoardr.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
-
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.zuri.pjt_95_hoardr.ui.login.LoginFragment"
-        android:label="Login" >
-        <action
-            android:id="@+id/action_loginFragment_to_navigation_home"
-            app:destination="@id/home_navigation" />
-    </fragment>
-    <fragment
-        android:id="@+id/registrationFragment"
-        android:name="com.zuri.pjt_95_hoardr.ui.registration.RegistrationFragment"
-        android:label="Registration"
-        tools:layout="@layout/fragment_registration" >
-        <action
-            android:id="@+id/action_registrationFragment_to_secondRegistrationFragment"
-            app:destination="@id/secondRegistrationFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/forgotPasswordFragment"
-        android:name="com.zuri.pjt_95_hoardr.ui.forgot_password.ForgotPasswordFragment"
-        android:label="Forgot Password"
-        tools:layout="@layout/forgot_password_fragment" />
-    <fragment
-        android:id="@+id/secondRegistrationFragment"
-        android:name="com.zuri.pjt_95_hoardr.ui.registration.SecondRegistrationFragment"
-        android:label="Registration"
-        tools:layout="@layout/fragment_second_registration" >
-        <action
-            android:id="@+id/action_secondRegistrationFragment_to_thirdRegistrationFragment"
-            app:destination="@id/thirdRegistrationFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/thirdRegistrationFragment"
-        android:name="com.zuri.pjt_95_hoardr.ui.registration.ThirdRegistrationFragment"
-        android:label="Registration"
-        tools:layout="@layout/fragment_third_registration" />
     <navigation android:id="@+id/home_navigation"
         app:startDestination="@id/navigation_home">
         <fragment
@@ -82,9 +34,87 @@
             android:id="@+id/action_global_home_navigation_to_successFragment"
             app:destination="@id/successFragment" />
     </navigation>
+
+    <navigation android:id="@+id/add_items_navigation"
+        app:startDestination="@id/navigation_add_items">
+        <fragment
+            android:id="@+id/navigation_add_items"
+            android:name="com.zuri.pjt_95_hoardr.ui.add_items.AddItemsFragment"
+            android:label="Add Items"
+            tools:layout="@layout/fragment_searchable_list">
+            <action
+                android:id="@+id/action_navigation_add_items_to_addItemPage1Fragment"
+                app:destination="@id/addItemFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/addItemFragment"
+            android:name="com.zuri.pjt_95_hoardr.ui.add_items.AddItemPage1Fragment"
+            tools:layout="@layout/fragment_add_item">
+        </fragment>
+        <action
+            android:id="@+id/action_global_add_items_navigation_to_successFragment"
+            app:destination="@id/successFragment" />
+    </navigation>
+
+    <navigation android:id="@+id/login_navigation"
+        app:startDestination="@id/loginFragment">
+        <fragment
+            android:id="@+id/loginFragment"
+            android:name="com.zuri.pjt_95_hoardr.ui.login.LoginFragment"
+            android:label="Login">
+            <action
+                android:id="@+id/action_loginFragment_to_navigation_home"
+                app:destination="@id/home_navigation" />
+            <action
+                android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
+                app:destination="@id/forgotPasswordFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/registrationFragment"
+            android:name="com.zuri.pjt_95_hoardr.ui.registration.RegistrationFragment"
+            android:label="Registration"
+            tools:layout="@layout/fragment_registration">
+            <action
+                android:id="@+id/action_registrationFragment_to_secondRegistrationFragment"
+                app:destination="@id/secondRegistrationFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/forgotPasswordFragment"
+            android:name="com.zuri.pjt_95_hoardr.ui.forgot_password.ForgotPasswordFragment"
+            android:label="Forgot Password"
+            tools:layout="@layout/forgot_password_fragment" />
+        <fragment
+            android:id="@+id/thirdRegistrationFragment"
+            android:name="com.zuri.pjt_95_hoardr.ui.registration.ThirdRegistrationFragment"
+            android:label="Registration"
+            tools:layout="@layout/fragment_third_registration" />
+        <fragment
+            android:id="@+id/secondRegistrationFragment"
+            android:name="com.zuri.pjt_95_hoardr.ui.registration.SecondRegistrationFragment"
+            android:label="Registration"
+            tools:layout="@layout/fragment_second_registration">
+            <action
+                android:id="@+id/action_secondRegistrationFragment_to_thirdRegistrationFragment"
+                app:destination="@id/thirdRegistrationFragment" />
+        </fragment>
+    </navigation>
+
     <fragment
         android:id="@+id/successFragment"
-        android:name="com.zuri.pjt_95_hoardr.ui.home.SuccessFragment"
-        android:label="SuccessFragment"
-        tools:layout="@layout/fragment_success"/>
+        android:name="com.zuri.pjt_95_hoardr.ui.general.SuccessFragment"
+        android:label="Success"
+        tools:layout="@layout/fragment_success">
+        <argument
+            android:name="data"
+            app:argType="com.zuri.pjt_95_hoardr.models.SuccessModel" />
+    </fragment>
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="com.zuri.pjt_95_hoardr.ui.general.OnboardingFragment"
+        tools:layout="@layout/fragment_onboarding">
+        <action
+            android:id="@+id/action_onboardingFragment_to_login_navigation"
+            app:destination="@id/login_navigation" />
+    </fragment>
+
 </navigation>

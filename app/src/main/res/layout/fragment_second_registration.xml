@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/view_padding"
     tools:context=".ui.registration.SecondRegistrationFragment">
 
 
@@ -11,10 +12,8 @@
         android:id="@+id/position_in_screen_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:fontFamily="@font/mulish_bold"
         android:text="2 / 3"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textAppearance="@style/TextStyleH2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,28 +21,21 @@
         android:id="@+id/support_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/mulish_bold"
         android:text="Help us create a solution that moves the world."
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textAppearance="@style/TextStyleH2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/position_in_screen_text" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/country_selection"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        style="@style/DropDownInputLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
         android:hint="Country"
-        android:textColorHint="#4B4B58"
         app:boxBackgroundColor="@android:color/transparent"
-        app:boxStrokeColor="#818195"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/support_text">
@@ -58,16 +50,11 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/state_selection"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        style="@style/DropDownInputLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
         android:hint="State"
-        android:textColorHint="#4B4B58"
-        app:boxBackgroundColor="@android:color/transparent"
-        app:boxStrokeColor="#818195"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/country_selection">
@@ -82,16 +69,12 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/lga_selection"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        style="@style/DropDownInputLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
         android:hint="Local Government Area"
-        android:textColorHint="#4B4B58"
         app:boxBackgroundColor="@android:color/transparent"
-        app:boxStrokeColor="#818195"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/state_selection">
@@ -105,11 +88,11 @@
 
     <Button
         android:id="@+id/next_button"
+        style="@style/Button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Next"
-        app:backgroundTint="#FF3D57"
         app:layout_constraintEnd_toEndOf="@+id/lga_selection"
         app:layout_constraintStart_toStartOf="@+id/lga_selection"
         app:layout_constraintTop_toBottomOf="@+id/lga_selection" />
