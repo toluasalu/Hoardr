@@ -11,10 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.zuri.pjt_95_hoardr.R
 import com.zuri.pjt_95_hoardr.databinding.FragmentSecondRegistrationBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+
 
 /**
  * A simple [Fragment] subclass.
@@ -44,18 +41,19 @@ class SecondRegistrationFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
        //Initialize the countries dropdown
-        val listOfCountries = listOf("Nigeria", "Ethiopia", "Egypt", "DR Congo", "Tanzania", "South Africa")
+        val listOfCountries = listOf("Nigeria", "Ethiopia", "Egypt", "DR Congo")
         val countryAdapter = ArrayAdapter(this.requireContext(), R.layout.list_item, listOfCountries)
         (binding.countrySelection.editText as? AutoCompleteTextView)?.setAdapter(countryAdapter)
 
         //Initialize the states dropdown
-        val listOfStates = listOf("Lagos" ,"Abia", "Adamawa", "Akwa Ibom", "Bauchi", "Bayelsa", "Benue")
+        val listOfStates = listOf("Lagos" ,"Abia", "Adamawa", "FCT")
         val stateAdapter = ArrayAdapter(this.requireContext(), R.layout.list_item, listOfStates)
         (binding.stateSelection.editText as? AutoCompleteTextView)?.setAdapter(stateAdapter)
 
-        //Initialize the LGA
-        val listOfLGAs = listOf("Lagos Island" ,"Surulere", "Agege", "Apapa", "Ikorodu", "Mushin")
+        //Initialize the LGA dropdown
+        val listOfLGAs = listOf("Lagos Island" ,"Surulere", "Agege", "Apapa")
         val lgaAdapter = ArrayAdapter(this.requireContext(), R.layout.list_item, listOfLGAs)
         (binding.lgaSelection.editText as? AutoCompleteTextView)?.setAdapter(lgaAdapter)
 
