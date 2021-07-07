@@ -36,11 +36,15 @@
 
     <!--Text Input-->
     <style name="TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="boxStrokeWidth">2dp</item>
-        <item name="boxStrokeColor">@color/text_shade_5</item>
+        <item name="android:textColorHint">@color/text_shade_2</item>
+        <item name="endIconTint">@color/text_shade_2</item>
+        <item name="errorEnabled">true</item>
+        <item name="errorTextColor">@color/red</item>
+        <item name="boxBackgroundColor">@android:color/transparent</item>
+        <item name="boxStrokeErrorColor">@color/red</item>
+        <item name="boxStrokeColor">@color/text_shade_4</item>
     </style>
     <style name="EditText" parent="Widget.AppCompat.EditText">
-        <item name="android:background">@color/white</item>
         <item name="android:textSize">14sp</item>
     </style>
 </resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Home Category Entries-->
+    <string-array name="home_category_entry">
+        <item>Electronics</item>
+        <item>Jewelry</item>
+        <item>Clothes</item>
+        <item>Machinery</item>
+    </string-array>
+    <integer-array name="home_category_entry_image">
+        <item>@drawable/ic_electronics</item>
+        <item>@drawable/ic_jewelry</item>
+        <item>@drawable/ic_clothes</item>
+        <item>@drawable/ic_machinery</item>
+    </integer-array>
+</resources>

@@ -71,7 +71,9 @@ class LoginFragment : Fragment() {
             userForgotPassword(it)
         }
 
-
+        binding.loginBtn.setOnClickListener {
+            requireView().findNavController().navigate(R.id.action_loginFragment_to_navigation_home)
+        }
     }
 
     override fun onDestroyView() {

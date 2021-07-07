@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6"
+        app:layout_constraintVertical_chainStyle="spread"
         app:srcCompat="@drawable/vector_successful_test" />
 
     <com.google.android.material.textview.MaterialTextView
@@ -23,11 +23,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:fontFamily="@font/lato_regular"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button_continue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6"
+        app:layout_constraintTop_toBottomOf="@+id/image_success"
         tools:text="Test successfully sent, the owner of the item would reach out to you soon" />
 
     <Button
@@ -35,9 +34,9 @@
         style="@style/Button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/home_header_margin"
         android:text="Continue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_success_info" />
 </androidx.constraintlayout.widget.ConstraintLayout>

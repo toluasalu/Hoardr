@@ -6,12 +6,6 @@
     app:startDestination="@id/loginFragment">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.zuri.pjt_95_hoardr.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
-
-    <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.zuri.pjt_95_hoardr.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
@@ -26,7 +20,11 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.zuri.pjt_95_hoardr.ui.login.LoginFragment"
-        android:label="Login" />
+        android:label="Login" >
+        <action
+            android:id="@+id/action_loginFragment_to_navigation_home"
+            app:destination="@id/home_navigation" />
+    </fragment>
     <fragment
         android:id="@+id/registrationFragment"
         android:name="com.zuri.pjt_95_hoardr.ui.registration.RegistrationFragment"
@@ -55,4 +53,38 @@
         android:name="com.zuri.pjt_95_hoardr.ui.registration.ThirdRegistrationFragment"
         android:label="Registration"
         tools:layout="@layout/fragment_third_registration" />
+    <navigation android:id="@+id/home_navigation"
+        app:startDestination="@id/navigation_home">
+        <fragment
+            android:id="@+id/navigation_home"
+            android:name="com.zuri.pjt_95_hoardr.ui.home.HomeFragment"
+            android:label="@string/title_home"
+            tools:layout="@layout/fragment_home" >
+            <action
+                android:id="@+id/action_navigation_home_to_itemDetailFragment"
+                app:destination="@id/itemDetailFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/exerciseFragment"
+            android:name="com.zuri.pjt_95_hoardr.ui.home.ExerciseFragment"
+            android:label="Exercise"
+            tools:layout="@layout/fragment_exercise"/>
+        <fragment
+            android:id="@+id/itemDetailFragment"
+            android:name="com.zuri.pjt_95_hoardr.ui.home.ItemDetailFragment"
+            android:label="ItemDetailFragment"
+            tools:layout="@layout/fragment_item_view">
+            <action
+                android:id="@+id/action_itemDetailFragment_to_exerciseFragment"
+                app:destination="@id/exerciseFragment" />
+        </fragment>
+        <action
+            android:id="@+id/action_global_home_navigation_to_successFragment"
+            app:destination="@id/successFragment" />
+    </navigation>
+    <fragment
+        android:id="@+id/successFragment"
+        android:name="com.zuri.pjt_95_hoardr.ui.home.SuccessFragment"
+        android:label="SuccessFragment"
+        tools:layout="@layout/fragment_success"/>
 </navigation>
