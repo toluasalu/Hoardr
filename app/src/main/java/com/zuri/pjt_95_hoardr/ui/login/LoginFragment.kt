@@ -72,7 +72,7 @@ class LoginFragment : Fragment() {
         }
 
         binding.loginBtn.setOnClickListener {
-            requireView().findNavController().navigate(R.id.action_loginFragment_to_navigation_home)
+            requireView().findNavController().navigate(R.id.action_navigation_login_to_navigation_home)
         }
     }
 

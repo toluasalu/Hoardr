@@ -5,56 +5,50 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@id/onboardingFragment">
 
-    <navigation android:id="@+id/home_navigation"
-        app:startDestination="@id/navigation_home">
-        <fragment
-            android:id="@+id/navigation_home"
-            android:name="com.zuri.pjt_95_hoardr.ui.home.HomeFragment"
-            android:label="@string/title_home"
-            tools:layout="@layout/fragment_home" >
-            <action
-                android:id="@+id/action_navigation_home_to_itemDetailFragment"
-                app:destination="@id/itemDetailFragment" />
-        </fragment>
-        <fragment
-            android:id="@+id/exerciseFragment"
-            android:name="com.zuri.pjt_95_hoardr.ui.home.ExerciseFragment"
-            android:label="Exercise"
-            tools:layout="@layout/fragment_exercise"/>
-        <fragment
-            android:id="@+id/itemDetailFragment"
-            android:name="com.zuri.pjt_95_hoardr.ui.home.ItemDetailFragment"
-            android:label="ItemDetailFragment"
-            tools:layout="@layout/fragment_item_view">
-            <action
-                android:id="@+id/action_itemDetailFragment_to_exerciseFragment"
-                app:destination="@id/exerciseFragment" />
-        </fragment>
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.zuri.pjt_95_hoardr.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_global_home_navigation_to_successFragment"
-            app:destination="@id/successFragment" />
-    </navigation>
-
-    <navigation android:id="@+id/add_items_navigation"
-        app:startDestination="@id/navigation_add_items">
-        <fragment
-            android:id="@+id/navigation_add_items"
-            android:name="com.zuri.pjt_95_hoardr.ui.add_items.AddItemsFragment"
-            android:label="Add Items"
-            tools:layout="@layout/fragment_searchable_list">
-            <action
-                android:id="@+id/action_navigation_add_items_to_addItemPage1Fragment"
-                app:destination="@id/addItemFragment" />
-        </fragment>
-        <fragment
-            android:id="@+id/addItemFragment"
-            android:name="com.zuri.pjt_95_hoardr.ui.add_items.AddItemPage1Fragment"
-            tools:layout="@layout/fragment_add_item">
-        </fragment>
+            android:id="@+id/action_navigation_home_to_itemDetailFragment"
+            app:destination="@id/itemDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemDetailFragment"
+        android:name="com.zuri.pjt_95_hoardr.ui.home.ItemDetailFragment"
+        android:label="ItemDetailFragment"
+        tools:layout="@layout/fragment_item_view">
         <action
-            android:id="@+id/action_global_add_items_navigation_to_successFragment"
+            android:id="@+id/action_itemDetailFragment_to_exerciseFragment"
+            app:destination="@id/exerciseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exerciseFragment"
+        android:name="com.zuri.pjt_95_hoardr.ui.home.ExerciseFragment"
+        android:label="Exercise"
+        tools:layout="@layout/fragment_exercise" >
+        <action
+            android:id="@+id/action_exerciseFragment_to_successFragment"
             app:destination="@id/successFragment" />
-    </navigation>
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_add_items"
+        android:name="com.zuri.pjt_95_hoardr.ui.add_items.AddItemsFragment"
+        android:label="Add Items"
+        tools:layout="@layout/fragment_searchable_list">
+        <action
+            android:id="@+id/action_navigation_add_items_to_addItemFragment"
+            app:destination="@id/addItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addItemFragment"
+        android:name="com.zuri.pjt_95_hoardr.ui.add_items.AddItemsUploadItemFragment"
+        tools:layout="@layout/fragment_add_item">
+        <action
+            android:id="@+id/action_addItemFragment_to_successFragment"
+            app:destination="@id/successFragment" />
+    </fragment>
 
     <navigation android:id="@+id/login_navigation"
         app:startDestination="@id/loginFragment">
@@ -62,9 +56,6 @@
             android:id="@+id/loginFragment"
             android:name="com.zuri.pjt_95_hoardr.ui.login.LoginFragment"
             android:label="Login">
-            <action
-                android:id="@+id/action_loginFragment_to_navigation_home"
-                app:destination="@id/home_navigation" />
             <action
                 android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
                 app:destination="@id/forgotPasswordFragment" />
@@ -97,6 +88,9 @@
                 android:id="@+id/action_secondRegistrationFragment_to_thirdRegistrationFragment"
                 app:destination="@id/thirdRegistrationFragment" />
         </fragment>
+        <action
+            android:id="@+id/action_navigation_login_to_navigation_home"
+            app:destination="@id/navigation_home" />
     </navigation>
 
     <fragment

@@ -25,11 +25,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        tools:text="You clutter your space, we make it even better."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/image_onboarding"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="You clutter your space, we make it even better." />
 
     <TextView
         android:id="@+id/text_onboarding_content"
@@ -38,12 +38,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/home_header_margin"
         android:layout_marginBottom="@dimen/home_header_margin"
-        tools:text="Your place doesn't need to look like a Nigerian cementary before making it look livable, connect with the right audience today."
         app:layout_constraintBottom_toTopOf="@+id/button_onboarding_action"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_onboarding_title"
-        app:layout_constraintVertical_chainStyle="spread_inside" />
+        app:layout_constraintVertical_chainStyle="spread_inside"
+        tools:text="Your place doesn't need to look like a Nigerian cementary before making it look livable, connect with the right audience today." />
 
     <Button
         android:id="@+id/button_onboarding_action"
@@ -52,11 +52,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/home_header_margin"
         android:layout_marginBottom="@dimen/home_content_margin"
-        tools:text="Next"
         app:layout_constraintBottom_toTopOf="@+id/text_onboarding_skip"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_onboarding_content" />
+        app:layout_constraintTop_toBottomOf="@+id/text_onboarding_content"
+        tools:text="Next" />
 
     <TextView
         android:id="@+id/text_onboarding_skip"
@@ -88,12 +88,10 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/home_header_margin"
         android:text="Already have an account?"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/text_onboarding_login"
         app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:visibility="visible" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/text_onboarding_login"
@@ -106,6 +104,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/text_onboarding_already_have_account"
         app:layout_constraintTop_toTopOf="@+id/text_onboarding_already_have_account" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_onboarding_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="image_onbarding_skip,text_onboarding_skip"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_onboarding_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="text_onboarding_already_have_account,text_onboarding_login"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:visibility="visible" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

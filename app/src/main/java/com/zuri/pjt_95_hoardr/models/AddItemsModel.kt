@@ -13,11 +13,17 @@ fun loadItemsData(context: Context) = mutableListOf<AddItem>().apply {
         val names = it.getStringArray(R.array.add_item_entry)
         val images = it.obtainTypedArray(R.array.add_item_entry_image)
         val descriptions = it.getStringArray(R.array.add_item_entry_description)
+        val navigations = it.obtainTypedArray(R.array.add_item_entry_navigation)
         for((index, name) in names.withIndex()){
-            add(AddItem(name, images.getResourceId(index, 0), descriptions[index]))
+            add(AddItem(name, images.getResourceId(index, 0),
+                descriptions[index], navigations.getResourceId(index, 0)))
         }
         images.recycle()
+        navigations.recycle()
     }
 }.toList()
 
-data class AddItem(val name: String, val image: Int, val description: String)
+data class AddItem(val name: String,
+                   val image: Int,
+                   val description: String,
+                   val navigation: Int)

@@ -7,7 +7,6 @@ import com.zuri.pjt_95_hoardr.R
  * @author Jeffrey Orazulike [chukwudumebiorazulike@gmail.com]
  * Created 06-Jul-21 at 3:26 PM
  */
-
 fun loadCategoryData(context: Context) = mutableListOf<Category>().apply {
     context.resources.let {
         val names = it.getStringArray(R.array.home_category_entry)
@@ -22,11 +21,11 @@ fun loadCategoryData(context: Context) = mutableListOf<Category>().apply {
 data class Category(val name: String, val image: Int)
 
 data class Product(
-        val itemName: String,
-        val ownerName: String,
-        val price: String,
-        val itemImage: String,
-        val ownerImage: String,
-        val favourite: Boolean,
-        val description: String
+    val itemName: String,
+    val ownerName: String,
+    val price: String,
+    val itemImage: String,
+    val ownerImage: String,
+    val favourite: Boolean,
+    val description: String
 )

@@ -10,6 +10,7 @@ import com.zuri.pjt_95_hoardr.R
 import com.zuri.pjt_95_hoardr.databinding.FragmentOnboardingBinding
 import com.zuri.pjt_95_hoardr.models.OnboardingModel
 import com.zuri.pjt_95_hoardr.models.loadOnboardingData
+import com.zuri.pjt_95_hoardr.utils.addOnClickListener
 
 /**
  * @author Jeffrey Orazulike [chukwudumebiorazulike@gmail.com]
@@ -30,21 +31,21 @@ class OnboardingFragment: Fragment() {
         val screens = loadOnboardingData(requireContext())
         binding.buttonOnboardingAction.setOnClickListener {
             if(lastScreen){
-                val navController = findNavController()
-                navController.popBackStack(R.id.onboardingFragment, true)
-                navController.navigate(R.id.action_onboardingFragment_to_login_navigation)
+                findNavController().navigate(R.id.action_onboardingFragment_to_login_navigation)
             }else{
-                displayScreen(screens[++currentScreen])
-                lastScreen = currentScreen == screens.size - 1
+                lastScreen = currentScreen >= screens.size - 1
+                displayScreen(screens[currentScreen])
             }
         }
-        binding.imageOnbardingSkip.setOnClickListener{
-            displayScreen(screens.last())
+        binding.groupOnboardingSkip.addOnClickListener{
             lastScreen = true
+            displayScreen(screens.last())
         }
+        displayScreen(screens[currentScreen])
     }
 
     private fun displayScreen(screen: OnboardingModel) = with(binding){
+        ++currentScreen
         screen.let {
             imageOnboarding.setImageResource(it.image)
             textOnboardingTitle.text = it.title
@@ -52,10 +53,8 @@ class OnboardingFragment: Fragment() {
             buttonOnboardingAction.text = it.buttonText
 
             if(lastScreen){
-                textOnboardingSkip.visibility = View.GONE
-                imageOnbardingSkip.visibility = View.GONE
-                textOnboardingAlreadyHaveAccount.visibility = View.VISIBLE
-                textOnboardingLogin.visibility = View.VISIBLE
+                groupOnboardingSkip.visibility = View.GONE
+                groupOnboardingLogin.visibility = View.VISIBLE
             }
         }
     }

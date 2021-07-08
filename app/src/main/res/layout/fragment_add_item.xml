@@ -53,8 +53,8 @@
         app:layout_constraintTop_toBottomOf="@+id/text_add_items_section_head" />
 
     <com.google.android.material.textfield.TextInputLayout
-        style="@style/DropDownInputLayout"
         android:id="@+id/textinput_add_items_category"
+        style="@style/DropDownInputLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/view_padding"
@@ -82,8 +82,8 @@
         app:layout_constraintTop_toBottomOf="@+id/textinput_add_items_category" />
 
     <com.google.android.material.textfield.TextInputLayout
-        style="@style/DropDownInputLayout"
         android:id="@+id/textinput_add_items_location"
+        style="@style/DropDownInputLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/view_padding"
@@ -141,8 +141,8 @@
         app:layout_constraintTop_toBottomOf="@+id/textinput_add_items_title" />
 
     <com.google.android.material.textfield.TextInputLayout
-        style="@style/TextInputLayout"
         android:id="@+id/textinput_add_items_description"
+        style="@style/TextInputLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/view_padding"
@@ -173,7 +173,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list_add_items_added_images"
         android:layout_width="0dp"
-        android:layout_height="1"
+        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/home_content_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -338,5 +338,47 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/check_add_items_anonymous" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_add_items_personal_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="text_add_items_personal_detail,check_add_items_anonymous,check_add_items_use_name"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_add_items_exchange_for"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="text_add_items_exchange_for,textinput_add_items_exchange_for"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_add_items_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="text_add_items_price,textinput_add_items_price"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_add_items_list_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="text_add_items_item_price,check_add_items_for_sale,check_add_items_for_exchange,check_add_items_for_free" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_add_items_add_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="text_add_items_images_requirement_2,list_add_items_added_images,text_add_items_images_requirement,text_add_items_add_image" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_add_items_extra_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="text_add_items_category,textinput_add_items_category,text_add_items_location,textinput_add_items_location" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

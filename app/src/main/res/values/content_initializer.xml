@@ -27,6 +27,10 @@
         <item>@drawable/ic_cloud</item>
         <item>@drawable/ic_inventory</item>
     </integer-array>
+    <integer-array name="add_item_entry_navigation">
+        <item>@id/action_navigation_add_items_to_addItemFragment</item>
+        <item>0</item>
+    </integer-array>
 
     <!--Onboarding Entries-->
     <string-array name="onboarding_entry">
@@ -35,7 +39,7 @@
         <item>Place a bid on your old items</item>
     </string-array>
     <string-array name="onboarding_entry_content">
-        <item>Your place doesn't need to look like a Nigerian cemetery before making it look livable, connect with the right audience today.</item>
+        <item>Your place doesn\'t need to look like a Nigerian cemetery before making it look livable, connect with the right audience today.</item>
         <item>Let us help you meet yout needs. You can exchange that item you hold sentiments towards for an even better item.</item>
         <item>That precious item can give you an even better earning than you have imagined, get onboard today and start earning.</item>
     </string-array>

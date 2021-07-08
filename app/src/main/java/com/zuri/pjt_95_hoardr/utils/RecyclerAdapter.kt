@@ -22,8 +22,9 @@ abstract class RecyclerAdapter<T>: RecyclerView.Adapter<RecyclerAdapter<T>.ViewH
      * **/
     inner class EqualSpaceItemDecoration: RecyclerView.ItemDecoration(){
         override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
+            val space = (parent.measuredWidth - (view.minimumWidth * itemCount))/(itemCount - 1)
             if(parent.getChildAdapterPosition(view) != 0)
-                outRect.left = parent.measuredWidth / (itemCount + 1)
+                outRect.left = space
         }
     }
 }

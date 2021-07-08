@@ -1,11 +1,13 @@
 package com.zuri.pjt_95_hoardr.ui.add_items
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zuri.pjt_95_hoardr.databinding.FragmentSearchableListBinding
 import com.zuri.pjt_95_hoardr.databinding.ItemAddItemBinding
@@ -33,9 +35,9 @@ class AddItemsFragment : Fragment() {
     private fun initializeDisplay() = with(binding){
         searchItems.root.visibility = View.GONE
         // load the add item entries and images and display them
-        val adapter = AddItemsAdapter()
-        listItems.adapter = adapter
+        listItems.adapter = AddItemsAdapter()
         listItems.layoutManager = LinearLayoutManager(requireContext())
+        Log.e(javaClass.simpleName, "initializeDisplay: ${listItems.adapter} ${listItems.layoutManager}" )
     }
 
     inner class AddItemsAdapter: RecyclerAdapter<AddItem>(){
@@ -50,6 +52,9 @@ class AddItemsFragment : Fragment() {
                 item.textAddItemTitle.text = it.name
                 item.imageAddItemIcon.setImageResource(it.image)
                 item.textAddItemDescription.text = it.description
+                item.root.setOnClickListener { _ ->
+                    findNavController().navigate(it.navigation)
+                }
             }
         }
     }

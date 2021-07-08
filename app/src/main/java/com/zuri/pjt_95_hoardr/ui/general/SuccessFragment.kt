@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.zuri.pjt_95_hoardr.R
 import com.zuri.pjt_95_hoardr.databinding.FragmentSuccessBinding
 
 /**
@@ -28,9 +27,7 @@ class SuccessFragment: Fragment(){
                 imageSuccess.setImageResource(it.image)
                 textSuccessInfo.text = it.content
                 buttonContinue.setOnClickListener { _ ->
-                    val navController = findNavController()
-                    navController.popBackStack(R.id.successFragment, true)
-                    navController.navigate(it.navigation)
+                    findNavController().navigate(it.navigation)
                 }
             }
         }
