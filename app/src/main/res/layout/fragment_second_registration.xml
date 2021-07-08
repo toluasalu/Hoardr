@@ -1,137 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.registration.SecondRegistrationFragment">
+<layout>
+    <data>
+        <variable
+            name="viewModel"
+            type="com.zuri.pjt_95_hoardr.ui.registration.RegistrationViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.registration.SecondRegistrationFragment">
 
 
-    <TextView
-        android:id="@+id/position_in_screen_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:fontFamily="@font/mulish_bold"
-        android:text="2 / 3"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/support_text"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/mulish_bold"
-        android:text="Help us create a solution that moves the world."
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/position_in_screen_text" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/country_selection"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Country"
-        android:textColorHint="#4B4B58"
-        app:boxBackgroundColor="@android:color/transparent"
-        app:boxStrokeColor="#818195"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/support_text">
-
-        <AutoCompleteTextView
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/position_in_screen_text"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="none" />
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/mulish_bold"
+            android:text="2 / 3"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/state_selection"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:hint="State"
-        android:textColorHint="#4B4B58"
-        app:boxBackgroundColor="@android:color/transparent"
-        app:boxStrokeColor="#818195"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/country_selection">
-
-        <AutoCompleteTextView
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/support_text"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:inputType="none" />
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/mulish_bold"
+            android:text="Help us create a solution that moves the world."
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/position_in_screen_text" />
 
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/lga_selection"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Local Government Area"
-        android:textColorHint="#4B4B58"
-        app:boxBackgroundColor="@android:color/transparent"
-        app:boxStrokeColor="#818195"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/state_selection">
-
-        <AutoCompleteTextView
-            android:layout_width="match_parent"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/country_selection"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:inputType="none" />
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Country"
+            android:textColorHint="#4B4B58"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeColor="#818195"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/support_text">
 
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <Button
-        android:id="@+id/next_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Next"
-        app:backgroundTint="#FF3D57"
-        app:layout_constraintEnd_toEndOf="@+id/lga_selection"
-        app:layout_constraintStart_toStartOf="@+id/lga_selection"
-        app:layout_constraintTop_toBottomOf="@+id/lga_selection" />
-
-    <TextView
-        android:id="@+id/have_account_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Already have an account?"
-        app:layout_constraintEnd_toEndOf="@+id/next_button"
-        app:layout_constraintStart_toStartOf="@+id/next_button"
-        app:layout_constraintTop_toBottomOf="@+id/next_button" />
-
-    <TextView
-        android:id="@+id/login_call_to_action_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=" Login"
-        android:textColor="#3D68FF"
-        app:layout_constraintBottom_toBottomOf="@+id/have_account_text"
-        app:layout_constraintStart_toEndOf="@+id/have_account_text" />
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/state_selection"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="State"
+            android:textColorHint="#4B4B58"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeColor="#818195"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/country_selection">
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lga_selection"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Local Government Area"
+            android:textColorHint="#4B4B58"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeColor="#818195"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/state_selection">
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Next"
+            app:backgroundTint="#FF3D57"
+            app:layout_constraintEnd_toEndOf="@+id/lga_selection"
+            app:layout_constraintStart_toStartOf="@+id/lga_selection"
+            app:layout_constraintTop_toBottomOf="@+id/lga_selection" />
+
+        <TextView
+            android:id="@+id/have_account_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Already have an account?"
+            app:layout_constraintEnd_toEndOf="@+id/next_button"
+            app:layout_constraintStart_toStartOf="@+id/next_button"
+            app:layout_constraintTop_toBottomOf="@+id/next_button" />
+
+        <TextView
+            android:id="@+id/login_call_to_action_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Login"
+            android:textColor="#3D68FF"
+            app:layout_constraintBottom_toBottomOf="@+id/have_account_text"
+            app:layout_constraintStart_toEndOf="@+id/have_account_text" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

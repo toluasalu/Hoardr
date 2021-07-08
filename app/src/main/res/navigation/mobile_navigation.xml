@@ -9,7 +9,13 @@
         android:id="@+id/navigation_home"
         android:name="com.zuri.pjt_95_hoardr.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue=""
+            />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_dashboard"
@@ -26,7 +32,11 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.zuri.pjt_95_hoardr.ui.login.LoginFragment"
-        android:label="Login" />
+        android:label="Login" >
+        <action
+            android:id="@+id/action_loginFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
     <fragment
         android:id="@+id/registrationFragment"
         android:name="com.zuri.pjt_95_hoardr.ui.registration.RegistrationFragment"

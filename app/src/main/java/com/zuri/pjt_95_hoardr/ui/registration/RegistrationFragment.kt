@@ -19,6 +19,7 @@ class RegistrationFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,11 +32,26 @@ class RegistrationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding?.apply {
+            lifecycleOwner = viewLifecycleOwner
+            viewModel = sharedViewModel
+        }
+
         binding.loginLink.setOnClickListener {
             loginUser(it)
         }
 
         binding.nextBtn.setOnClickListener{
+            val firstName = binding.firstNameField.editText?.text.toString()
+            val lastName =  binding.lastNameField.editText?.text.toString()
+            val emailAddress = binding.emailField.editText?.text.toString()
+            val userPhoneNumber = binding.phoneNumberField.editText?.text.toString()
+
+            sharedViewModel.setFirstName(firstName)
+            sharedViewModel.setLastName(lastName)
+            sharedViewModel.setEmailAddress(emailAddress)
+            sharedViewModel.setPhoneNumber(userPhoneNumber)
+
             findNavController().navigate(R.id.action_registrationFragment_to_secondRegistrationFragment)
         }
     }
