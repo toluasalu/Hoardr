@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Home Category Entries-->
+    <string-array name="home_category_entry">
+        <item>Electronics</item>
+        <item>Jewelry</item>
+        <item>Clothes</item>
+        <item>Machinery</item>
+    </string-array>
+    <integer-array name="home_category_entry_image">
+        <item>@drawable/ic_electronics</item>
+        <item>@drawable/ic_jewelry</item>
+        <item>@drawable/ic_clothes</item>
+        <item>@drawable/ic_machinery</item>
+    </integer-array>
+
+    <!--Add Item Entries-->
+    <string-array name="add_item_entry">
+        <item>Upload Item</item>
+        <item>View Inventory</item>
+    </string-array>
+    <string-array name="add_item_entry_description">
+        <item>Have a new item, upload by clicking on this button</item>
+        <item>View items uploaded, check quantity available and edit items</item>
+    </string-array>
+    <integer-array name="add_item_entry_image">
+        <item>@drawable/ic_cloud</item>
+        <item>@drawable/ic_inventory</item>
+    </integer-array>
+
+    <!--Onboarding Entries-->
+    <string-array name="onboarding_entry">
+        <item>You clutter your space, we make it even better.</item>
+        <item>Exchange sentiments for better.</item>
+        <item>Place a bid on your old items</item>
+    </string-array>
+    <string-array name="onboarding_entry_content">
+        <item>Your place doesn't need to look like a Nigerian cemetery before making it look livable, connect with the right audience today.</item>
+        <item>Let us help you meet yout needs. You can exchange that item you hold sentiments towards for an even better item.</item>
+        <item>That precious item can give you an even better earning than you have imagined, get onboard today and start earning.</item>
+    </string-array>
+    <string-array name="onboarding_entry_button_text">
+        <item>Next</item>
+        <item>Next</item>
+        <item>De-clutter Your Space Today</item>
+    </string-array>
+    <integer-array name="onboarding_entry_image">
+        <item>@drawable/vector_box</item>
+        <item>@drawable/vector_people</item>
+        <item>@drawable/vector_hammer</item>
+    </integer-array>
+</resources>

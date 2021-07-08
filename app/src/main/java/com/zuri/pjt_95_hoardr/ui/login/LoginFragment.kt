@@ -1,6 +1,5 @@
 package com.zuri.pjt_95_hoardr.ui.login
 
-import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
@@ -16,11 +15,7 @@ import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
-import androidx.room.Room
 import com.google.android.material.textfield.TextInputLayout
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
 import com.zuri.pjt_95_hoardr.R
 import com.zuri.pjt_95_hoardr.databinding.FragmentLoginBinding
 import java.util.regex.Pattern
@@ -78,8 +73,7 @@ class LoginFragment : Fragment() {
                 passwordText,
                 outlinePasswordField,
                 passwordRequirementTextView,
-                outlineEmailField
-            )
+                outlineEmailField )
 
         }
 
@@ -130,6 +124,9 @@ class LoginFragment : Fragment() {
             }
 
 
+        binding.loginBtn.setOnClickListener {
+            requireView().findNavController().navigate(R.id.action_loginFragment_to_navigation_home)
+        }
     }
 
     override fun onDestroyView() {
@@ -145,6 +142,7 @@ class LoginFragment : Fragment() {
     private fun userForgotPassword(view: View) {
         view.findNavController().navigate(R.id.forgotPasswordFragment)
     }
+
 
 
     private fun validatePassword(
@@ -201,6 +199,12 @@ class LoginFragment : Fragment() {
             emailRequirementTextView.visibility = View.VISIBLE
         }
     }
+
+
+
+
+
+
 
 
     companion object {}

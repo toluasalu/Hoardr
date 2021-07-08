@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/regular_view_sub_margins"
+    android:padding="@dimen/view_padding"
     android:paddingEnd="0sp">
 
     <com.google.android.material.textview.MaterialTextView
@@ -66,11 +66,11 @@
         android:layout_height="0dp"
         android:background="@color/hot_yellow"
         android:gravity="center"
-        android:padding="@dimen/regular_view_sub_margins"
+        android:padding="@dimen/view_padding"
         android:paddingStart="@dimen/regular_view_margins"
         android:paddingEnd="@dimen/regular_view_margins"
         android:text="N 2,500"
-        app:layout_constraintBottom_toBottomOf="@+id/image_item_owner"
+        app:layout_constraintBottom_toBottomOf="@+id/text_item_owner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/text_item_name" />
 
@@ -90,7 +90,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/home_content_margin"
-        android:layout_marginEnd="@dimen/regular_view_sub_margins"
+        android:layout_marginEnd="@dimen/view_padding"
         android:textAlignment="textStart"
         android:textColor="@color/text_shade_5"
         app:layout_constraintEnd_toEndOf="parent"
