@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "712325539641",
+    "project_id": "hoardr-d1f1b",
+    "storage_bucket": "hoardr-d1f1b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:712325539641:android:5e3d0caa2aa9ccceccaae8",
+        "android_client_info": {
+          "package_name": "com.zuri.pjt_95_hoardr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "712325539641-b50nbuqdmtqq1d56jrmvchpiaqarjm5d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zuri.pjt_95_hoardr",
+            "certificate_hash": "7aaa1034267cb9b690b86ba264e35e23604eb47b"
+          }
+        },
+        {
+          "client_id": "712325539641-5c4idad2b6ktis4p8nqbv578dp8uas7u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRM8mwaGUjdqT0FbLuYSjKp642NxfR1PM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "712325539641-5c4idad2b6ktis4p8nqbv578dp8uas7u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

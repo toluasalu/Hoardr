@@ -2,14 +2,19 @@ package com.zuri.pjt_95_hoardr.ui.login
 
 import android.graphics.Color
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.util.Log
 import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.textfield.TextInputLayout
 import com.zuri.pjt_95_hoardr.R
 import com.zuri.pjt_95_hoardr.databinding.FragmentLoginBinding
@@ -22,10 +27,20 @@ import java.util.regex.Pattern
  */
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
+    private lateinit var db: FirebaseFirestore
 
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        // Access a Cloud Firestore instance
+        db = Firebase.firestore
+
+
+    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -72,7 +87,45 @@ class LoginFragment : Fragment() {
         }
 
         binding.loginBtn.setOnClickListener {
-            requireView().findNavController().navigate(R.id.action_navigation_login_to_navigation_home)
+            verifyUser()
+        }
+
+
+    }
+
+    private fun verifyUser() {
+        val enteredEmail = binding.emailField.editText?.text.toString()
+        val enteredUserPassword = binding.passwordField.editText?.text.toString()
+        val applicationContext = this.requireContext()
+        val handler = Handler(Looper.getMainLooper())
+        // val action = LoginFragmentDirections.actionLoginFragmentToNavigationHome()
+
+        db.collection("users")
+            .whereEqualTo("password", enteredUserPassword)
+            .whereEqualTo("email", enteredEmail)
+            .get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    Log.d("LoginFragment", "${document.id} => ${document.data["first"]}")
+                }
+
+                handler.post {
+                    Toast.makeText(
+                        applicationContext,
+                        "Login was successful",
+                        Toast.LENGTH_SHORT
+                    ).show()
+
+                    findNavController().navigate(R.id.navigation_home)
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.e("LoginFragment", "Error getting documents: ", exception)
+            }
+
+
+        binding.loginBtn.setOnClickListener {
+            requireView().findNavController().navigate(R.id.action_loginFragment_to_navigation_home)
         }
     }
 

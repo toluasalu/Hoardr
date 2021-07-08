@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="viewModel"
+            type="com.zuri.pjt_95_hoardr.ui.registration.RegistrationViewModel" />
+    </data>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -40,11 +47,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/support_text">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword" />
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/password_requirement_text"
@@ -59,9 +66,9 @@
         \n &#8226; 1 or more uppercase letters
         \n &#8226; 1 or more of the following characters @, $, !
         \n &#8226; 1 or more numbers \n &#8226; Password must be between 8 and 10 characters"
-        app:layout_constraintEnd_toEndOf="@+id/password_field"
-        app:layout_constraintStart_toStartOf="@+id/password_field"
-        app:layout_constraintTop_toBottomOf="@+id/password_field" />
+            app:layout_constraintEnd_toEndOf="@+id/password_field"
+            app:layout_constraintStart_toStartOf="@+id/password_field"
+            app:layout_constraintTop_toBottomOf="@+id/password_field" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/confirm_password_field"
@@ -75,11 +82,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/password_requirement_text">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword" />
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/register_btn"
@@ -92,15 +99,15 @@
         app:layout_constraintStart_toStartOf="@+id/confirm_password_field"
         app:layout_constraintTop_toBottomOf="@+id/confirm_password_field" />
 
-    <TextView
-        android:id="@+id/register_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Already have an account? "
-        app:layout_constraintEnd_toEndOf="@+id/register_btn"
-        app:layout_constraintStart_toStartOf="@+id/register_btn"
-        app:layout_constraintTop_toBottomOf="@+id/register_btn" />
+        <TextView
+            android:id="@+id/register_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Already have an account? "
+            app:layout_constraintEnd_toEndOf="@+id/register_btn"
+            app:layout_constraintStart_toStartOf="@+id/register_btn"
+            app:layout_constraintTop_toBottomOf="@+id/register_btn" />
 
     <TextView
         android:id="@+id/login_text"
