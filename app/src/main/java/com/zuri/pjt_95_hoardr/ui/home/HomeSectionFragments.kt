@@ -19,7 +19,6 @@ import com.zuri.pjt_95_hoardr.models.SuccessModel
  */
 class ItemDetailFragment: Fragment(){
     private lateinit var binding: FragmentItemViewBinding
-    private lateinit var product: Product
     private var loggedIn: Boolean = false
 
     override fun onCreateView(

@@ -1,29 +1,17 @@
 package com.zuri.pjt_95_hoardr.ui.registration
 
-import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
 import com.google.android.material.textfield.TextInputLayout
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.ktx.FirebaseFirestoreKtxRegistrar
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
-import com.zuri.pjt_95_hoardr.R
 import com.zuri.pjt_95_hoardr.databinding.FragmentThirdRegistrationBinding
-import com.zuri.pjt_95_hoardr.model.User
-import java.util.concurrent.Executors
 import java.util.regex.Pattern
 
 
@@ -35,22 +23,12 @@ import java.util.regex.Pattern
 class ThirdRegistrationFragment : Fragment() {
     private var _binding: FragmentThirdRegistrationBinding? = null
     private val sharedViewModel: RegistrationViewModel by activityViewModels()
-    private lateinit var  db: FirebaseFirestore
 
     private var count = 0
 
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-
-        // Access a Cloud Firestore instance
-         db = Firebase.firestore
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -125,37 +103,7 @@ class ThirdRegistrationFragment : Fragment() {
         phoneNumber: String?,
         userPassword: String
     ) {
-        val newUser = hashMapOf(
-            "first" to firstName,
-            "last" to surname,
-            "email" to email,
-            "phoneNumber" to phoneNumber,
-            "password" to userPassword
-        )
-        val handler = Handler(Looper.getMainLooper())
 
-
-        // Add a new document with a generated ID
-        db.collection("users")
-            .add(newUser)
-            .addOnSuccessListener { documentReference ->
-
-                Log.d(
-                    "RegistrationFragment",
-                    "DocumentSnapshot added with ID: ${documentReference.id}"
-                )
-
-                handler.post {
-                    Toast.makeText(this.requireContext(),
-                        "Creating new account was successful",
-                        Toast.LENGTH_SHORT).show()
-                         findNavController().navigate(R.id.loginFragment)
-                }
-
-            }
-            .addOnFailureListener { e ->
-                Log.e("RegistrationFragment", "Error adding document", e)
-            }
     }
 
 

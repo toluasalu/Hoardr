@@ -16,10 +16,8 @@ import com.zuri.pjt_95_hoardr.models.loadItemsData
 import com.zuri.pjt_95_hoardr.utils.RecyclerAdapter
 
 class AddItemsFragment : Fragment() {
-
     private lateinit var viewModel: AddItemsViewModel
     private lateinit var binding: FragmentSearchableListBinding
-    private var loggedIn: Boolean = false
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -33,7 +31,7 @@ class AddItemsFragment : Fragment() {
     }
 
     private fun initializeDisplay() = with(binding){
-        searchItems.root.visibility = View.GONE
+        searchItems.visibility = View.GONE
         // load the add item entries and images and display them
         listItems.adapter = AddItemsAdapter()
         listItems.layoutManager = LinearLayoutManager(requireContext())

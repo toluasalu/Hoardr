@@ -3,6 +3,8 @@
 
     <!-- Toolbar -->
     <style name="Toolbar" parent="Theme.AppCompat.Light">
+        <item name="titleCentered">true</item>
+        <item name="titleTextColor">@color/white</item>
         <!-- color used by navigation icon -->
         <item name="colorControlNormal">@color/white</item>
         <!-- color used by overflow menu -->

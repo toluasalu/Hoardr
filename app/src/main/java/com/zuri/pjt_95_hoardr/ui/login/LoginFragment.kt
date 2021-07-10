@@ -2,22 +2,20 @@ package com.zuri.pjt_95_hoardr.ui.login
 
 import android.graphics.Color
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.util.Log
 import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
+import com.google.firebase.firestore.FirebaseFirestore
 import com.zuri.pjt_95_hoardr.R
 import com.zuri.pjt_95_hoardr.databinding.FragmentLoginBinding
+import com.zuri.pjt_95_hoardr.models.User
 import java.util.regex.Pattern
 
 
@@ -26,33 +24,23 @@ import java.util.regex.Pattern
 
  */
 class LoginFragment : Fragment() {
-    private var _binding: FragmentLoginBinding? = null
+    private lateinit var binding: FragmentLoginBinding
     private lateinit var db: FirebaseFirestore
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        // Access a Cloud Firestore instance
-        db = Firebase.firestore
-
-
-    }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        savedInstanceStkate: Bundle?
+    ): View {
         // Inflate the layout for this fragment
-        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        db = FirebaseFirestore.getInstance()
+
         val outlineEmailField = binding.emailField
         val outlinePasswordField = binding.passwordField
 
@@ -79,11 +67,11 @@ class LoginFragment : Fragment() {
 
         //set on click listeners for the forgot password and register link
         binding.registerTodayLink.setOnClickListener {
-            registerUser(it)
+            findNavController().navigate(R.id.registrationFragment)
         }
 
         binding.forgotPasswordLink.setOnClickListener {
-            userForgotPassword(it)
+            findNavController().navigate(R.id.forgotPasswordFragment)
         }
 
         binding.loginBtn.setOnClickListener {
@@ -94,56 +82,23 @@ class LoginFragment : Fragment() {
     }
 
     private fun verifyUser() {
-        val enteredEmail = binding.emailField.editText?.text.toString()
-        val enteredUserPassword = binding.passwordField.editText?.text.toString()
-        val applicationContext = this.requireContext()
-        val handler = Handler(Looper.getMainLooper())
-        // val action = LoginFragmentDirections.actionLoginFragmentToNavigationHome()
-
         db.collection("users")
-            .whereEqualTo("password", enteredUserPassword)
-            .whereEqualTo("email", enteredEmail)
-            .get()
-            .addOnSuccessListener { documents ->
-                for (document in documents) {
-                    Log.d("LoginFragment", "${document.id} => ${document.data["first"]}")
+            .whereEqualTo("email", binding.emailField.editText?.text.toString().lowercase())
+            .whereEqualTo("password", binding.passwordField.editText?.text.toString())
+            .get().addOnSuccessListener {
+                if(it.documents.isNotEmpty()){
+                    it.documents.first().toObject(User::class.java)?.let{ user ->
+                        Snackbar.make(requireView(), "Welcome back, ${user.first}", Snackbar.LENGTH_SHORT).show()
+                        findNavController().navigate(LoginFragmentDirections.actionNavigationLoginToNavigationHome(user))
+                    }
+                }else{
+                    Snackbar.make(requireView(), "Account not found", Snackbar.LENGTH_SHORT).show()
                 }
 
-                handler.post {
-                    Toast.makeText(
-                        applicationContext,
-                        "Login was successful",
-                        Toast.LENGTH_SHORT
-                    ).show()
-
-                    findNavController().navigate(R.id.navigation_home)
-                }
+            }.addOnFailureListener {
+                Snackbar.make(requireView(), "${it.message}", Snackbar.LENGTH_SHORT).show()
             }
-            .addOnFailureListener { exception ->
-                Log.e("LoginFragment", "Error getting documents: ", exception)
-            }
-
-
-        binding.loginBtn.setOnClickListener {
-            requireView().findNavController().navigate(R.id.action_loginFragment_to_navigation_home)
-        }
     }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
-
-    private fun registerUser(view: View) {
-        view.findNavController().navigate(R.id.registrationFragment)
-    }
-
-    private fun userForgotPassword(view: View) {
-        view.findNavController().navigate(R.id.forgotPasswordFragment)
-    }
-
-
 
     private fun validatePassword(
         passwordText: CharSequence?,

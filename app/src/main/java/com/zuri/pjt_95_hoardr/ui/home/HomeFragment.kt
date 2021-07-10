@@ -4,10 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.constraintlayout.widget.Group
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import com.zuri.pjt_95_hoardr.R
 import com.zuri.pjt_95_hoardr.databinding.FragmentHomeBinding
 import com.zuri.pjt_95_hoardr.databinding.ItemHomeCategoryBinding
@@ -17,7 +18,6 @@ class HomeFragment : Fragment() {
 
     private lateinit var viewModel: HomeViewModel
     private lateinit var binding: FragmentHomeBinding
-    private var loggedIn: Boolean = false
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -31,8 +31,21 @@ class HomeFragment : Fragment() {
     }
 
     private fun initializeDisplay() = with(binding){
-        if(loggedIn) buttonHomeRegister.visibility = View.GONE
-        else textHomeTimeGreeting.visibility = View.GONE
+        // show the navigation pieces
+        requireActivity().findViewById<Group>(R.id.group_navigation).visibility = View.VISIBLE
+
+        arguments?.let { argument ->
+            HomeFragmentArgs.fromBundle(argument).user?.let {
+                textHomeGreeting.text = "Welcome, ${it.first}"
+                viewModel.user = it
+                viewModel.loggedIn = true
+            }
+        }
+
+        viewModel.loggedIn?.let {
+            if(it) buttonHomeRegister.visibility = View.GONE
+            else textHomeTimeGreeting.visibility = View.GONE
+        }
         /**
          * initialize home categories
          */
@@ -41,6 +54,9 @@ class HomeFragment : Fragment() {
             it.textCategoryViewAll.visibility = View.GONE
             it.imageCategoryViewAll.visibility = View.GONE
         }
+        // load the category entries and images and display them
+        listHomeCategories.adapter = CategoriesAdapter()
+        listHomeCategories.layoutManager = GridLayoutManager(requireContext(), 4)
 
         /**
          * initialize newly added items
@@ -58,16 +74,6 @@ class HomeFragment : Fragment() {
 
         buttonHomeRegister.setOnClickListener {
             findNavController().navigate(R.id.action_navigation_home_to_itemDetailFragment)
-        }
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        with(binding){
-            // load the category entries and images and display them
-            val adapter = CategoriesAdapter()
-            listHomeCategories.adapter = adapter
-            listHomeCategories.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-            listHomeCategories.addItemDecoration(adapter.EqualSpaceItemDecoration())
         }
     }
 

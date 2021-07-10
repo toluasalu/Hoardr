@@ -1,7 +1,5 @@
 package com.zuri.pjt_95_hoardr.utils
 
-import android.graphics.Rect
-import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 
@@ -16,15 +14,4 @@ abstract class RecyclerAdapter<T>: RecyclerView.Adapter<RecyclerAdapter<T>.ViewH
 
     inner class ViewHolder(val binding: ViewBinding):
             RecyclerView.ViewHolder(binding.root)
-
-    /**
-     * Equally distributes space in a horizontal layout recycler view
-     * **/
-    inner class EqualSpaceItemDecoration: RecyclerView.ItemDecoration(){
-        override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
-            val space = (parent.measuredWidth - (view.minimumWidth * itemCount))/(itemCount - 1)
-            if(parent.getChildAdapterPosition(view) != 0)
-                outRect.left = space
-        }
-    }
 }

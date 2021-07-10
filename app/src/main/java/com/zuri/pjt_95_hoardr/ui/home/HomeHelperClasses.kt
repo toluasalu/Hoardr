@@ -19,13 +19,3 @@ fun loadCategoryData(context: Context) = mutableListOf<Category>().apply {
 }.toList()
 
 data class Category(val name: String, val image: Int)
-
-data class Product(
-    val itemName: String,
-    val ownerName: String,
-    val price: String,
-    val itemImage: String,
-    val ownerImage: String,
-    val favourite: Boolean,
-    val description: String
-)

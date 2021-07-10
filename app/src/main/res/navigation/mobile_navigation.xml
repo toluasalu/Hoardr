@@ -13,6 +13,10 @@
         <action
             android:id="@+id/action_navigation_home_to_itemDetailFragment"
             app:destination="@id/itemDetailFragment" />
+        <argument
+            android:name="user"
+            app:argType="com.zuri.pjt_95_hoardr.models.User"
+            app:nullable="true" />
     </fragment>
     <fragment
         android:id="@+id/itemDetailFragment"
@@ -90,7 +94,9 @@
         </fragment>
         <action
             android:id="@+id/action_navigation_login_to_navigation_home"
-            app:destination="@id/navigation_home" />
+            app:destination="@id/navigation_home"
+            app:popUpTo="@id/mobile_navigation"
+            app:popUpToInclusive="true" />
     </navigation>
 
     <fragment
