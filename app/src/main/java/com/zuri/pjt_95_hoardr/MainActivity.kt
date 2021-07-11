@@ -1,7 +1,9 @@
 package com.zuri.pjt_95_hoardr
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.MutableLiveData
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -12,9 +14,15 @@ import com.zuri.pjt_95_hoardr.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    companion object{
+        const val IMAGE_REQUEST_CODE = 0x01
+    }
+
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+
+    val intentResult: MutableLiveData<Pair<Int, Intent>> = MutableLiveData()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         // loads back the main theme after displaying the splash screen
@@ -27,7 +35,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
-//        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         navController = findNavController(R.id.nav_host_fragment)
         // Passing each menu ID as a set of Ids because each
@@ -45,4 +52,11 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp() =
         navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(resultCode == RESULT_OK)
+            data?.let {
+                intentResult.value = requestCode to it
+            }
+    }
 }

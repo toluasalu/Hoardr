@@ -2,7 +2,6 @@ package com.zuri.pjt_95_hoardr.ui.registration
 
 import android.graphics.Color
 import android.os.Bundle
-import android.text.BoringLayout.make
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -20,7 +19,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.zuri.pjt_95_hoardr.R
 import com.zuri.pjt_95_hoardr.databinding.FragmentThirdRegistrationBinding
-import com.zuri.pjt_95_hoardr.ui.login.LoginFragmentDirections
+import com.zuri.pjt_95_hoardr.models.User
 import java.util.regex.Pattern
 
 
@@ -123,15 +122,15 @@ class ThirdRegistrationFragment : Fragment() {
         userPassword: String
     ) {
         //Create new user using the information that was collected
-        val user = hashMapOf(
-            "first" to firstName,
-            "last" to surname,
-            "email" to email,
-            "phoneNumber" to phoneNumber,
-            "country" to country,
-            "state" to state,
-            "local government" to lga,
-            "password" to userPassword
+        val user = User(
+                first = firstName,
+                last = surname,
+                email = email,
+                phoneNumber = phoneNumber,
+                country = country,
+                state = state,
+                lga = lga,
+                password = userPassword
         )
 
         db.collection("users").add(user).addOnSuccessListener { documentReference ->

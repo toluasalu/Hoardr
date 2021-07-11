@@ -28,7 +28,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8"
         tools:itemCount="1"
-        tools:listitem="@layout/item_exchange_option" />
+        tools:listitem="@layout/item_image" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_proceed"

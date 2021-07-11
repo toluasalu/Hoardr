@@ -5,8 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import com.zuri.pjt_95_hoardr.R
 import com.zuri.pjt_95_hoardr.databinding.FragmentAddItemBinding
 import com.zuri.pjt_95_hoardr.models.SuccessModel
 import com.zuri.pjt_95_hoardr.utils.CheckBoxGroup
@@ -30,6 +28,9 @@ class AddItemsUploadItemFragment: Fragment() {
 
     private fun initializeDisplay() = with(binding){
         setupCheckboxes()
+        // setup image upload area
+        listAddItemsAddedImages.adapter = ImageAdapter(this@AddItemsUploadItemFragment)
+        listAddItemsAddedImages.layoutManager = GridLayoutManager(requireContext(), 5)
         binding.buttonAddItemContinue.setOnClickListener {
             findNavController().navigate(
                 AddItemsUploadItemFragmentDirections.actionAddItemFragmentToSuccessFragment(

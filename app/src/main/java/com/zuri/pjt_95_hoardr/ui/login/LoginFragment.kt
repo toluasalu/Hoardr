@@ -21,7 +21,6 @@ import java.util.regex.Pattern
 
 /**
  * A simple [Fragment] subclass.
-
  */
 class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
@@ -40,6 +39,10 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         db = FirebaseFirestore.getInstance()
+
+        // account for testing
+        binding.emailField.editText?.setText("i@i.com")
+        binding.passwordField.editText?.setText("i")
 
         val outlineEmailField = binding.emailField
         val outlinePasswordField = binding.passwordField

@@ -52,10 +52,7 @@ class OnboardingFragment: Fragment() {
             textOnboardingContent.text = it.content
             buttonOnboardingAction.text = it.buttonText
 
-            if(lastScreen){
-                groupOnboardingSkip.visibility = View.GONE
-                groupOnboardingLogin.visibility = View.VISIBLE
-            }
+            if(lastScreen) groupOnboardingSkip.visibility = View.GONE
         }
     }
 }

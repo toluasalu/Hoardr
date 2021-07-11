@@ -36,11 +36,13 @@ class HomeFragment : Fragment() {
 
         arguments?.let { argument ->
             HomeFragmentArgs.fromBundle(argument).user?.let {
-                textHomeGreeting.text = "Welcome, ${it.first}"
                 viewModel.user = it
                 viewModel.loggedIn = true
             }
         }
+
+        textHomeGreeting.text = if(viewModel.user != null)
+            "Hello ${viewModel.user!!.first}," else "Welcome"
 
         viewModel.loggedIn?.let {
             if(it) buttonHomeRegister.visibility = View.GONE
