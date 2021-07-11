@@ -7,11 +7,9 @@ package com.zuri.pjt_95_hoardr.models
 data class Item(
     val description: String? = "",
     val image: String? = null,
-    val isAnonymous: Boolean? = null,
+    val owner: String? = "",
     val listType: String? = "",
     val location: String? = "",
     val price: String? = "0",
     val title: String? = "",
-    val user: User? = null,
-    val key: String? = null
 )

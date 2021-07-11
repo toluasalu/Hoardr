@@ -10,14 +10,14 @@
         android:name="com.zuri.pjt_95_hoardr.ui.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home">
-        <action
-            android:id="@+id/action_navigation_home_to_itemDetailFragment"
-            app:destination="@id/itemDetailFragment" />
         <argument
             android:name="user"
             app:argType="com.zuri.pjt_95_hoardr.models.User"
             app:nullable="true"
             android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_navigation_home_to_searchableFragment"
+            app:destination="@id/searchableFragment" />
     </fragment>
     <fragment
         android:id="@+id/itemDetailFragment"
@@ -40,8 +40,7 @@
     <fragment
         android:id="@+id/navigation_add_items"
         android:name="com.zuri.pjt_95_hoardr.ui.add_items.AddItemsFragment"
-        android:label="Add Items"
-        tools:layout="@layout/fragment_searchable_list">
+        android:label="Add Items">
         <action
             android:id="@+id/action_navigation_add_items_to_addItemFragment"
             app:destination="@id/addItemFragment" />
@@ -116,6 +115,18 @@
         <action
             android:id="@+id/action_onboardingFragment_to_login_navigation"
             app:destination="@id/login_navigation" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchableFragment"
+        android:name="com.zuri.pjt_95_hoardr.ui.general.SearchableFragment"
+        android:label="SearchableFragment" >
+        <action
+            android:id="@+id/action_searchableFragment_to_itemDetailFragment"
+            app:destination="@id/itemDetailFragment" />
+        <argument
+            android:name="data"
+            app:argType="com.zuri.pjt_95_hoardr.models.fragment_initializers.SearchableModel"
+            app:nullable="true" />
     </fragment>
 
 </navigation>

@@ -11,7 +11,7 @@ import com.zuri.pjt_95_hoardr.R
 import com.zuri.pjt_95_hoardr.databinding.DialogContactOptionBinding
 import com.zuri.pjt_95_hoardr.databinding.FragmentExerciseBinding
 import com.zuri.pjt_95_hoardr.databinding.FragmentItemViewBinding
-import com.zuri.pjt_95_hoardr.models.SuccessModel
+import com.zuri.pjt_95_hoardr.models.fragment_initializers.SuccessModel
 
 /**
  * @author Jeffrey Orazulike [chukwudumebiorazulike@gmail.com]

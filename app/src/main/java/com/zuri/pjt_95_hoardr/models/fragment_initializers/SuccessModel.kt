@@ -1,4 +1,4 @@
-package com.zuri.pjt_95_hoardr.models
+package com.zuri.pjt_95_hoardr.models.fragment_initializers
 
 import java.io.Serializable
 

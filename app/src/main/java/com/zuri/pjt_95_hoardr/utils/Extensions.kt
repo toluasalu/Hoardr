@@ -8,9 +8,9 @@ import androidx.constraintlayout.widget.Group
  * @author Jeffrey Orazulike [chukwudumebiorazulike@gmail.com]
  * Created 08-Jul-21 at 12:31 AM
  */
-fun Group.addOnClickListener(listener: (view: View) -> Unit){
+fun Group.forEach(action: (view: View) -> Unit){
     referencedIds.forEach { id ->
-        rootView.findViewById<View>(id).setOnClickListener(listener)
+        action(rootView.findViewById<View>(id))
     }
 }
 

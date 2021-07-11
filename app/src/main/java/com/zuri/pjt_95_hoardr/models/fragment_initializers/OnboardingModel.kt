@@ -1,4 +1,4 @@
-package com.zuri.pjt_95_hoardr.models
+package com.zuri.pjt_95_hoardr.models.fragment_initializers
 
 import android.content.Context
 import com.zuri.pjt_95_hoardr.R

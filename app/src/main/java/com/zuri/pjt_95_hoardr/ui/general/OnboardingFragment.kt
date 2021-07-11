@@ -10,7 +10,7 @@ import com.zuri.pjt_95_hoardr.R
 import com.zuri.pjt_95_hoardr.databinding.FragmentOnboardingBinding
 import com.zuri.pjt_95_hoardr.models.OnboardingModel
 import com.zuri.pjt_95_hoardr.models.loadOnboardingData
-import com.zuri.pjt_95_hoardr.utils.addOnClickListener
+import com.zuri.pjt_95_hoardr.utils.forEach
 
 /**
  * @author Jeffrey Orazulike [chukwudumebiorazulike@gmail.com]
@@ -37,9 +37,11 @@ class OnboardingFragment: Fragment() {
                 displayScreen(screens[currentScreen])
             }
         }
-        binding.groupOnboardingSkip.addOnClickListener{
-            lastScreen = true
-            displayScreen(screens.last())
+        binding.groupOnboardingSkip.forEach{
+            it.setOnClickListener {
+                lastScreen = true
+                displayScreen(screens.last())
+            }
         }
         displayScreen(screens[currentScreen])
     }
