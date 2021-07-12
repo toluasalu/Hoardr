@@ -1,16 +1,15 @@
 package com.zuri.pjt_95_hoardr.utils
 
+import android.content.pm.PackageManager
+import android.net.Uri
+import android.os.Environment
+import android.os.Environment.MEDIA_MOUNTED
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
-import com.google.android.gms.tasks.OnFailureListener
-import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.FileDownloadTask
-import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.ktx.storage
 import com.zuri.pjt_95_hoardr.databinding.ItemProductBinding
 import com.zuri.pjt_95_hoardr.models.Item
@@ -43,22 +42,29 @@ class ItemAdapter(
             imageItemProductFavourite.visibility = View.GONE
 
         fun loadImage(imageUri: String){
-            val file = File(imageUri.substringAfter("item/"))
-            val localFile = if(file.exists()) file else File.createTempFile(file.toString(), null)
 
-            fun showImage(){
-                imageItemProduct.loadImage(
-                    localFile.path.toUri(), fragment.requireActivity())
-            }
+            if (MEDIA_MOUNTED == Environment.getExternalStorageState() &&
+                        fragment.requireContext()
+                            .checkCallingOrSelfPermission(
+                                "android.permission.WRITE_EXTERNAL_STORAGE") == PackageManager.PERMISSION_GRANTED){
+                val storageDir = fragment.context?.externalCacheDir
+                if(storageDir?.exists() == false) storageDir.mkdirs()
+                Log.d(TAG, "loadImage: directory: $storageDir imageUri: $imageUri")
 
-            if(!localFile.exists()) {
+                val localFile = File.createTempFile(imageUri.substringAfter("/"), ".jpg", storageDir)
+
+                fun showImage(){
+                    imageItemProduct.loadImage(
+                        Uri.fromFile(localFile), fragment.requireActivity())
+                }
+
                 Firebase.storage.reference.child(imageUri).getFile(localFile)
-                    .addOnSuccessListener(OnSuccessListener<FileDownloadTask.TaskSnapshot?> {
+                    .addOnSuccessListener{
                         showImage()
-                    }).addOnFailureListener(OnFailureListener {
+                    }.addOnFailureListener{
                         Log.e(TAG, "loadImage: Image couldn't load")
-                    })
-            }else showImage()
+                    }
+            }
         }
 
         items[holder.adapterPosition].let {

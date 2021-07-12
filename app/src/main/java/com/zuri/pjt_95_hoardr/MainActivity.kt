@@ -1,8 +1,10 @@
 package com.zuri.pjt_95_hoardr
 
+import android.Manifest
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
@@ -47,6 +49,9 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_home, R.id.navigation_add_items, R.id.navigation_favourite, R.id.navigation_profile
             )
         )
+
+        ActivityCompat.requestPermissions(
+            this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 1)
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         binding.navView.setupWithNavController(navController)
