@@ -1,7 +1,11 @@
 package com.zuri.pjt_95_hoardr.utils
 
+import android.app.Activity
+import android.graphics.BitmapFactory
+import android.net.Uri
 import android.view.View
 import android.widget.CheckBox
+import android.widget.ImageView
 import androidx.constraintlayout.widget.Group
 
 /**
@@ -17,10 +21,18 @@ fun Group.forEach(action: (view: View) -> Unit){
 fun CheckBox.setOnCheckedListener(group: CheckBoxGroup, listener: ((view: View) -> Unit)?){
     setOnClickListener{ view ->
         if(isChecked){
-            group.selected(this)
+            group.select(this)
             listener?.let {
                 it(view)
             }
         }
     }
+}
+
+fun ImageView.loadImage(uri: Uri, activity: Activity){
+    setImageBitmap(
+        BitmapFactory.decodeStream(
+            activity.contentResolver.openInputStream(uri)
+        )
+    )
 }

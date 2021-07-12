@@ -18,7 +18,7 @@ import com.zuri.pjt_95_hoardr.databinding.ItemImageBinding
  * Created 10-Jul-21 at 5:49 PM
  */
 class ImageAdapter(private val fragment: Fragment, val max: Int): RecyclerAdapter<Uri>() {
-    private val _items = mutableSetOf<Uri>()
+    val _items = mutableSetOf<Uri>()
     val TAG = javaClass.simpleName
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
@@ -47,12 +47,9 @@ class ImageAdapter(private val fragment: Fragment, val max: Int): RecyclerAdapte
                     }
                 }
             }else{
-                val item = _items.toList()[holder.adapterPosition - 1]
-                val selectedImage = BitmapFactory.decodeStream(
-                    fragment.requireActivity()
-                        .contentResolver.openInputStream(item)
-                )
-                imageExchangeItem.setImageBitmap(selectedImage)
+                imageExchangeItem.loadImage(
+                    _items.toList()[holder.adapterPosition - 1],
+                    fragment.requireActivity())
             }
             (fragment.requireActivity() as? MainActivity)?.let { activity ->
                 activity.intentResult.observe(fragment){ pair ->

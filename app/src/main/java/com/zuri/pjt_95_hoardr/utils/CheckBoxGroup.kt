@@ -1,6 +1,8 @@
 package com.zuri.pjt_95_hoardr.utils
 
 import android.widget.CheckBox
+import com.zuri.pjt_95_hoardr.ui.home.ExerciseFragmentDirections
+import kotlinx.coroutines.newFixedThreadPoolContext
 
 /**
  * @author Jeffrey Orazulike [chukwudumebiorazulike@gmail.com]
@@ -14,11 +16,26 @@ class CheckBoxGroup(vararg val checkboxes: CheckBox) {
         }
     }
 
-    fun selected(checkbox: CheckBox) {
+    private fun isPartOfGroup(checkbox: CheckBox): Boolean{
+        if (checkbox !in checkboxes)
+            throw IllegalArgumentException("This checkbox is not part of this group")
+        return true
+    }
+
+    fun select(checkbox: CheckBox) {
+        isPartOfGroup(checkbox)
         checkboxes.asSequence().filter{
             it != checkbox
         }.forEach {
             it.isChecked = false
         }
+    }
+
+    fun getCheckedOr(checkbox: CheckBox): CheckBox{
+        isPartOfGroup(checkbox)
+        val checked = checkboxes.asSequence().filter {
+            it.isChecked
+        }.toList()
+        return if(checked.isEmpty()) checkbox else checked.first()
     }
 }

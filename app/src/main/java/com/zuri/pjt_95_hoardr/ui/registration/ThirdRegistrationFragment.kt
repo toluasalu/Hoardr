@@ -149,9 +149,7 @@ class ThirdRegistrationFragment : Fragment() {
     private fun validatePassword(
         passwordText: CharSequence?,
         outlinePasswordField: TextInputLayout,
-        passwordRequirementTextView: TextView,
-
-        ) {
+        passwordRequirementTextView: TextView) {
         val uppercase: Pattern = Pattern.compile("[A-Z]")
         val lowercase: Pattern = Pattern.compile("[a-z]")
         val specialChar = Pattern.compile("\\@")

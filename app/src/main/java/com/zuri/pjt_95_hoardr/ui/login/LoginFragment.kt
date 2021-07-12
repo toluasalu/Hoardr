@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.firestore.FirebaseFirestore
+import com.zuri.pjt_95_hoardr.MainActivity
 import com.zuri.pjt_95_hoardr.R
 import com.zuri.pjt_95_hoardr.databinding.FragmentLoginBinding
 import com.zuri.pjt_95_hoardr.models.User
@@ -92,7 +93,8 @@ class LoginFragment : Fragment() {
                 if(it.documents.isNotEmpty()){
                     it.documents.first().toObject(User::class.java)?.let{ user ->
                         Snackbar.make(requireView(), "Welcome back, ${user.first}", Snackbar.LENGTH_SHORT).show()
-                        findNavController().navigate(LoginFragmentDirections.actionNavigationLoginToNavigationHome(user))
+                        (requireActivity() as MainActivity).mViewModel.user = user
+                        findNavController().navigate(R.id.action_navigation_login_to_navigation_home)
                     }
                 }else{
                     Snackbar.make(requireView(), "Account not found", Snackbar.LENGTH_SHORT).show()

@@ -6,22 +6,23 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.constraintlayout.widget.Group
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.zuri.pjt_95_hoardr.utils.HoardrViewModel
+import com.zuri.pjt_95_hoardr.MainActivity
 import com.zuri.pjt_95_hoardr.R
 import com.zuri.pjt_95_hoardr.databinding.FragmentHomeBinding
 import com.zuri.pjt_95_hoardr.databinding.ItemHomeCategoryBinding
 import com.zuri.pjt_95_hoardr.models.Item
+import com.zuri.pjt_95_hoardr.utils.HoardrFragment
 import com.zuri.pjt_95_hoardr.utils.ItemAdapter
 import com.zuri.pjt_95_hoardr.utils.RecyclerAdapter
 
-class HomeFragment : Fragment() {
+class HomeFragment : HoardrFragment() {
 
-    private lateinit var viewModel: HomeViewModel
     private lateinit var binding: FragmentHomeBinding
     private lateinit var layoutManager: RecyclerView.LayoutManager
     private lateinit var db: FirebaseFirestore
@@ -31,30 +32,40 @@ class HomeFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View {
-        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         binding = FragmentHomeBinding.inflate(inflater, container,false)
         layoutManager = GridLayoutManager(requireContext(), 4)
         db = Firebase.firestore
-        initializeDisplay()
+        initializeContent()
         return binding.root
     }
 
-    private fun initializeDisplay() = with(binding){
+    override fun initializeContent() = with(binding){
+        super.initializeContent()
         // show the navigation pieces
-        requireActivity().findViewById<Group>(R.id.group_navigation).visibility = View.VISIBLE
+        (requireActivity() as MainActivity).let{
+            it.findViewById<Group>(R.id.group_navigation).visibility = View.VISIBLE
+        }
 
-        arguments?.let { argument ->
-            HomeFragmentArgs.fromBundle(argument).user?.let {
-                viewModel.user = it
-                viewModel.loggedIn = true
+        fun loadItems(){
+            db.collection("items").get().addOnSuccessListener { documents ->
+                if(documents.size() == 0) includeHomeNewItemsHeader.textCategoryViewAll.visibility = View.GONE
+                else {
+                    appViewModel.items = documents.asSequence().map { document ->
+                        document.toObject(Item::class.java)
+                    }.toList()
+                    val adapter = ItemAdapter(appViewModel.loggedIn, appViewModel.items!!, this@HomeFragment)
+                    listHomeNewItems.adapter = adapter
+                    adapter.customItemCount = 10
+                    listHomeNewItems.layoutManager = GridLayoutManager(requireContext(), 2)
+                }
             }
         }
 
-        textHomeGreeting.text = if(viewModel.user != null)
-            "Hello ${viewModel.user!!.first}," else "Welcome"
+        textHomeGreeting.text = if(appViewModel.user != null)
+            "Hello ${appViewModel.user!!.first}," else "Welcome"
 
-        if(viewModel.loggedIn) buttonHomeRegister.visibility = View.GONE
-            else textHomeTimeGreeting.visibility = View.GONE
+        if(appViewModel.loggedIn) buttonHomeRegister.visibility = View.GONE
+        else textHomeTimeGreeting.visibility = View.GONE
         /**
          * initialize home categories
          */
@@ -73,22 +84,8 @@ class HomeFragment : Fragment() {
         includeHomeNewItemsHeader.let {
             it.textCategoryHeading.text = "Newly Added Items"
             // get all items from database
-            db.collection("items").get().addOnSuccessListener { documents ->
-                if(documents.size() == 0) it.textCategoryViewAll.visibility = View.GONE
-                else {
-                    val adapter = ItemAdapter(
-                        viewModel.loggedIn,
-                        documents.asSequence().map { document ->
-                            document.toObject(Item::class.java)
-                        }.toList()
-                    )
-                    listHomeNewItems.adapter = adapter
-                    adapter.customItemCount = 10
-                    listHomeNewItems.layoutManager = GridLayoutManager(requireContext(), 2)
-                }
-            }
+            loadItems()
         }
-
 
         /**
          * initialize favourite items

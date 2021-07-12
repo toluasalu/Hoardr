@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.zuri.pjt_95_hoardr.R
 import com.zuri.pjt_95_hoardr.databinding.FragmentOnboardingBinding
-import com.zuri.pjt_95_hoardr.models.OnboardingModel
-import com.zuri.pjt_95_hoardr.models.loadOnboardingData
+import com.zuri.pjt_95_hoardr.models.fragment_initializers.OnboardingModel
+import com.zuri.pjt_95_hoardr.models.fragment_initializers.loadOnboardingData
 import com.zuri.pjt_95_hoardr.utils.forEach
 
 /**

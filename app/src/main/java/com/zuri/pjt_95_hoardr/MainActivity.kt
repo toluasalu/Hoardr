@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -11,6 +12,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.zuri.pjt_95_hoardr.databinding.ActivityMainBinding
+import com.zuri.pjt_95_hoardr.utils.HoardrViewModel
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,13 +23,14 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
-
+    lateinit var mViewModel: HoardrViewModel
     val intentResult: MutableLiveData<Pair<Int, Intent>> = MutableLiveData()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         // loads back the main theme after displaying the splash screen
         setTheme(R.style.Theme_Hoardr)
         super.onCreate(savedInstanceState)
+        mViewModel = ViewModelProvider(this).get(HoardrViewModel::class.java)
         initializeDisplayContent()
     }
 

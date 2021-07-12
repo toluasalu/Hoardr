@@ -10,11 +10,6 @@
         android:name="com.zuri.pjt_95_hoardr.ui.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home">
-        <argument
-            android:name="user"
-            app:argType="com.zuri.pjt_95_hoardr.models.User"
-            app:nullable="true"
-            android:defaultValue="@null" />
         <action
             android:id="@+id/action_navigation_home_to_searchableFragment"
             app:destination="@id/searchableFragment" />
@@ -106,7 +101,7 @@
         tools:layout="@layout/fragment_success">
         <argument
             android:name="data"
-            app:argType="com.zuri.pjt_95_hoardr.models.SuccessModel" />
+            app:argType="com.zuri.pjt_95_hoardr.models.fragment_initializers.SuccessModel" />
     </fragment>
     <fragment
         android:id="@+id/onboardingFragment"
