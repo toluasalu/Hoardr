@@ -5,13 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.constraintlayout.widget.Group
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.zuri.pjt_95_hoardr.utils.HoardrViewModel
 import com.zuri.pjt_95_hoardr.MainActivity
 import com.zuri.pjt_95_hoardr.R
 import com.zuri.pjt_95_hoardr.databinding.FragmentHomeBinding
@@ -53,7 +51,7 @@ class HomeFragment : HoardrFragment() {
                     appViewModel.items = documents.asSequence().map { document ->
                         document.toObject(Item::class.java)
                     }.toList()
-                    val adapter = ItemAdapter(appViewModel.loggedIn, appViewModel.items!!, this@HomeFragment)
+                    val adapter = ItemAdapter(appViewModel.loggedIn, appViewModel.items!!)
                     listHomeNewItems.adapter = adapter
                     adapter.customItemCount = 10
                     listHomeNewItems.layoutManager = GridLayoutManager(requireContext(), 2)

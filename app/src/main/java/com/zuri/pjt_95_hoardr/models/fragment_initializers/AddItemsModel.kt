@@ -3,7 +3,7 @@ package com.zuri.pjt_95_hoardr.models.fragment_initializers
 import android.content.Context
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.NavHostFragment.findNavController
+import androidx.navigation.findNavController
 import com.zuri.pjt_95_hoardr.R
 import com.zuri.pjt_95_hoardr.databinding.ItemAddItemBinding
 import com.zuri.pjt_95_hoardr.utils.RecyclerAdapter
@@ -48,7 +48,7 @@ class AddItemsAdapter(private val fragment: Fragment): RecyclerAdapter<AddItem>(
             item.imageAddItemIcon.setImageResource(it.image)
             item.textAddItemDescription.text = it.description
             item.root.setOnClickListener { _ ->
-                findNavController(fragment).navigate(it.navigation)
+                fragment.requireView().findNavController().navigate(it.navigation)
             }
         }
     }
