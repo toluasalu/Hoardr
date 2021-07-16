@@ -1,21 +1,16 @@
-package com.zuri.pjt_95_hoardr.ui.add_items
+package com.zuri.pjt_95_hoardr.ui.items
 
-import android.app.ProgressDialog
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.OnProgressListener
 import com.google.firebase.storage.StorageReference
-import com.google.firebase.storage.UploadTask
 import com.google.firebase.storage.ktx.storage
 import com.zuri.pjt_95_hoardr.R
 import com.zuri.pjt_95_hoardr.databinding.FragmentAddItemBinding
@@ -42,26 +37,27 @@ class AddItemsUploadItemFragment: HoardrFragment() {
         binding = FragmentAddItemBinding.inflate(inflater, container,false)
         db = Firebase.firestore
         storage = Firebase.storage.reference
-        initializeContent()
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        with(binding){
+            setupCheckboxes()
+            // setup image upload area
+            val maxNumberOfImages = 4
+            adapter = ImageAdapter(this@AddItemsUploadItemFragment, maxNumberOfImages)
+            listAddItemsAddedImages.adapter = adapter
+            listAddItemsAddedImages.layoutManager = GridLayoutManager(requireContext(), maxNumberOfImages+1)
+            binding.buttonAddItemContinue.setOnClickListener {
+                submit()
+            }
+        }
     }
 
     override fun onResume() {
         super.onResume()
         adapter.notifyDataSetChanged()
-    }
-
-    override fun initializeContent() = with(binding){
-        super.initializeContent()
-        setupCheckboxes()
-        // setup image upload area
-        val maxNumberOfImages = 4
-        adapter = ImageAdapter(this@AddItemsUploadItemFragment, maxNumberOfImages)
-        listAddItemsAddedImages.adapter = adapter
-        listAddItemsAddedImages.layoutManager = GridLayoutManager(requireContext(), maxNumberOfImages+1)
-        binding.buttonAddItemContinue.setOnClickListener {
-            submit()
-        }
     }
 
     private fun setupCheckboxes() = with(binding){
@@ -71,7 +67,7 @@ class AddItemsUploadItemFragment: HoardrFragment() {
         }
 
         val priceSelection = CheckBoxGroup(checkAddItemsForSale, checkAddItemsForExchange, checkAddItemsForFree)
-        val userSelection = CheckBoxGroup(checkAddItemsAnonymous, checkAddItemsUseName)
+        CheckBoxGroup(checkAddItemsAnonymous, checkAddItemsUseName)
 
         with(priceSelection){
             checkAddItemsForSale.setOnCheckedListener(this) { toggle(price = true, exchange = false) }
@@ -82,26 +78,25 @@ class AddItemsUploadItemFragment: HoardrFragment() {
 
     private fun submit() = with(binding){
         val path = "items/${UUID.randomUUID()}"
+        val price = when {
+            checkAddItemsForSale.isChecked -> textinputAddItemsPrice.editText?.text.toString().toInt()
+            checkAddItemsForExchange.isChecked -> -1
+            else -> 0
+        }
         val item = Item(
             description = textinputAddItemsDescription.editText?.text.toString(),
             title = textinputAddItemsTitle.editText?.text.toString(),
             image = path,
-            owner = if(checkAddItemsAnonymous.isChecked) {
-                "Anonymous"
-            }else appViewModel.user?.let {
-                "${it.first} ${it.last}"
-            },
-            listType = CheckBoxGroup(checkAddItemsForSale,
-                checkAddItemsForExchange,
-                checkAddItemsForFree)
-                .getCheckedOr(checkAddItemsForFree).text.toString(),
+            owner = appViewModel.user?.id,
             location = textinputAddItemsLocation.editText?.text.toString(),
-            price = textinputAddItemsPrice.editText?.text.toString()
+            price = price,
+            uploadedAnonymously = checkAddItemsAnonymous.isChecked
         )
 
         fun uploadItem(){
             db.collection("items").add(item)
                 .addOnSuccessListener {
+                    buttonAddItemContinue.revertAnimation()
                     findNavController().navigate(
                         AddItemsUploadItemFragmentDirections.actionAddItemFragmentToSuccessFragment(
                             SuccessModel(getString(R.string.success_add_item),
@@ -109,28 +104,20 @@ class AddItemsUploadItemFragment: HoardrFragment() {
                         )
                     )
                 }.addOnFailureListener {
+                    buttonAddItemContinue.revertAnimation()
                     Snackbar.make(root, "We had a problem uploading your item", Snackbar.LENGTH_SHORT).show()
                 }
         }
         
         fun uploadImage(){
             val imageRef = storage.child(path)
-            val progress = ProgressDialog(requireContext())
+            buttonAddItemContinue.startAnimation()
 
-            progress.setTitle("Uploading Image")
-            progress.show()
-            imageRef.putFile(adapter._items.toList().first()).addOnProgressListener { _ ->
-                OnProgressListener<UploadTask.TaskSnapshot> {
-                    progress.progress = (100 * it.bytesTransferred / it.totalByteCount).toInt()
-                    val message = "Uploaded: ${progress.progress}%"
-                    progress.setMessage(message)
-                    Log.d(TAG, "uploadImage: $message")
-                }
-            }.addOnSuccessListener {
-                progress.dismiss()
+            imageRef.putFile(adapter._items.toList().first())
+                .addOnSuccessListener {
                 uploadItem()
             }.addOnFailureListener{
-                progress.dismiss()
+                buttonAddItemContinue.revertAnimation()
                 Snackbar.make(root,"Image could not be uploaded\n${it.message}",Snackbar.LENGTH_SHORT).show()
             }
         }

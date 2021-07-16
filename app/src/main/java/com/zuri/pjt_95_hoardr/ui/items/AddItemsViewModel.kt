@@ -1,4 +1,4 @@
-package com.zuri.pjt_95_hoardr.ui.add_items
+package com.zuri.pjt_95_hoardr.ui.items
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -1,9 +1,7 @@
 package com.zuri.pjt_95_hoardr.utils
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.zuri.pjt_95_hoardr.MainActivity
 
@@ -14,7 +12,10 @@ import com.zuri.pjt_95_hoardr.MainActivity
 open class HoardrFragment: Fragment() {
     lateinit var appViewModel: HoardrViewModel
 
-    open fun initializeContent() = (requireActivity() as? MainActivity)?.let {
-        appViewModel = it.mViewModel
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        (requireActivity() as? MainActivity)?.let {
+            appViewModel = it.mViewModel
+        }
     }
 }

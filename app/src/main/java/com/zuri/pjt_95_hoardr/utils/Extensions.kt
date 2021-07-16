@@ -1,19 +1,24 @@
 package com.zuri.pjt_95_hoardr.utils
 
+import android.graphics.Color
 import android.net.Uri
 import android.util.Log
+import android.util.Patterns
 import android.view.View
 import android.widget.CheckBox
 import android.widget.ImageView
 import androidx.constraintlayout.widget.Group
 import com.bumptech.glide.Glide
+import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
+import com.zuri.pjt_95_hoardr.R
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.io.File
 import java.io.IOException
+import java.util.regex.Pattern
 
 /**
  * @author Jeffrey Orazulike [chukwudumebiorazulike@gmail.com]
@@ -87,5 +92,45 @@ fun ImageView.loadImage(imageLocation: Uri, fromFirebase: Boolean = false){
         }catch(exception: IOException){
             Log.e(TAG, "loadImage: ${exception.message}")
         }
+    }
+}
+
+fun TextInputLayout.validatePassword(requirements: View): Boolean {
+    val passwordText = editText!!.text.toString()
+    val password = Pattern.compile("[a-z]+[A-Z]+//d+//w+//W+")
+
+    return if(true){
+        error = null
+        boxBackgroundColor = Color.TRANSPARENT
+        boxStrokeColor = Color.parseColor("#34eb77")
+        //Make Password Requirements disappear
+        requirements.visibility = View.GONE
+        true
+    }else{
+        error =
+            "The password you entered is wrong, kindly confirm if you\n" +
+                    "missed any of the requirements below."
+        //Make Password Requirements visible
+        requirements.visibility = View.VISIBLE
+        false
+    }
+}
+
+fun TextInputLayout.validateEmailAddress(requirements: View): Boolean {
+    val emailText = editText!!.text.toString()
+    return if (Patterns.EMAIL_ADDRESS.matcher(emailText).matches()) {
+        error = null
+        boxStrokeColor = Color.parseColor("#34eb77")
+        boxBackgroundColor = Color.TRANSPARENT
+        setEndIconDrawable(R.drawable.ic_login_success)
+        requirements.visibility = View.GONE
+        true
+    } else {
+        error =
+            "The email address you entered is wrong, kindly confirm if it\n" +
+                    "follows the email requirements"
+        //Make email requirements visible
+        requirements.visibility = View.VISIBLE
+        false
     }
 }

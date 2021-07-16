@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.constraintlayout.widget.Group
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.FirebaseFirestore
@@ -33,64 +34,68 @@ class HomeFragment : HoardrFragment() {
         binding = FragmentHomeBinding.inflate(inflater, container,false)
         layoutManager = GridLayoutManager(requireContext(), 4)
         db = Firebase.firestore
-        initializeContent()
         return binding.root
     }
 
-    override fun initializeContent() = with(binding){
-        super.initializeContent()
-        // show the navigation pieces
-        (requireActivity() as MainActivity).let{
-            it.findViewById<Group>(R.id.group_navigation).visibility = View.VISIBLE
-        }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        with(binding){
+            // show the navigation pieces
+                (requireActivity() as MainActivity)
+                    .findViewById<Group>(R.id.group_navigation).visibility = View.VISIBLE
 
-        fun loadItems(){
-            db.collection("items").get().addOnSuccessListener { documents ->
-                if(documents.size() == 0) includeHomeNewItemsHeader.textCategoryViewAll.visibility = View.GONE
-                else {
-                    appViewModel.items = documents.asSequence().map { document ->
-                        document.toObject(Item::class.java)
-                    }.toList()
-                    val adapter = ItemAdapter(appViewModel.loggedIn, appViewModel.items!!)
-                    listHomeNewItems.adapter = adapter
-                    adapter.customItemCount = 10
-                    listHomeNewItems.layoutManager = GridLayoutManager(requireContext(), 2)
+            fun loadItems(){
+                db.collection("items").get().addOnSuccessListener { documents ->
+                    if(documents.size() == 0) includeHomeNewItemsHeader.textCategoryViewAll.visibility = View.GONE
+                    else {
+                        appViewModel.items = documents.asSequence().map { document ->
+                            document.toObject(Item::class.java)
+                        }.toList()
+                        val adapter = ItemAdapter(appViewModel){ item, user ->
+                            findNavController().navigate(
+                                HomeFragmentDirections
+                                    .actionNavigationHomeToItemDetailFragment(item, user))
+                        }
+                        listHomeNewItems.adapter = adapter
+//                        adapter.customItemCount = 10
+                        listHomeNewItems.layoutManager = GridLayoutManager(requireContext(), 2)
+                    }
                 }
             }
-        }
 
-        textHomeGreeting.text = if(appViewModel.user != null)
-            "Hello ${appViewModel.user!!.first}," else "Welcome"
+            textHomeGreeting.text = if(appViewModel.user != null)
+                "Hello ${appViewModel.user!!.first}," else "Welcome"
 
-        if(appViewModel.loggedIn) buttonHomeRegister.visibility = View.GONE
-        else textHomeTimeGreeting.visibility = View.GONE
-        /**
-         * initialize home categories
-         */
-        // hide the view all option
-        includeHomeCategoriesHeader.let {
-            it.textCategoryViewAll.visibility = View.GONE
-            it.imageCategoryViewAll.visibility = View.GONE
-        }
-        // load the category entries and images and display them
-        listHomeCategories.adapter = CategoriesAdapter()
-        listHomeCategories.layoutManager = layoutManager
+            if(appViewModel.loggedIn) buttonHomeRegister.visibility = View.GONE
+            else textHomeTimeGreeting.visibility = View.GONE
+            /**
+             * initialize home categories
+             */
+            // hide the view all option
+            includeHomeCategoriesHeader.let {
+                it.textCategoryViewAll.visibility = View.GONE
+                it.imageCategoryViewAll.visibility = View.GONE
+            }
+            // load the category entries and images and display them
+            listHomeCategories.adapter = CategoriesAdapter()
+            listHomeCategories.layoutManager = layoutManager
 
-        /**
-         * initialize newly added items
-         */
-        includeHomeNewItemsHeader.let {
-            it.textCategoryHeading.text = "Newly Added Items"
-            // get all items from database
-            loadItems()
-        }
+            /**
+             * initialize newly added items
+             */
+            includeHomeNewItemsHeader.let {
+                it.textCategoryHeading.text = "Newly Added Items"
+                // get all items from database
+                loadItems()
+            }
 
-        /**
-         * initialize favourite items
-         */
-        includeHomeFavouriteItemsHeader.let {
-            it.textCategoryHeading.text = "Favourite Items"
-            it.textCategoryViewAll.visibility = View.GONE
+            /**
+             * initialize favourite items
+             */
+            includeHomeFavouriteItemsHeader.let {
+                it.textCategoryHeading.text = "Favourite Items"
+                it.textCategoryViewAll.visibility = View.GONE
+            }
         }
     }
 

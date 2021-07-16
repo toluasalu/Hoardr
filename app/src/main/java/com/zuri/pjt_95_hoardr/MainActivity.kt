@@ -14,9 +14,10 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.zuri.pjt_95_hoardr.databinding.ActivityMainBinding
+import com.zuri.pjt_95_hoardr.utils.BackPressedObserver
 import com.zuri.pjt_95_hoardr.utils.HoardrViewModel
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(){
 
     companion object{
         const val IMAGE_REQUEST_CODE = 0x01
@@ -27,6 +28,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     lateinit var mViewModel: HoardrViewModel
     val intentResult: MutableLiveData<Pair<Int, Intent>> = MutableLiveData()
+    // fragments that want to perform an action when the back button is pressed
+    private val backPressedObservers = mutableListOf<BackPressedObserver>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         // loads back the main theme after displaying the splash screen
@@ -46,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_add_items, R.id.navigation_favourite, R.id.navigation_profile
+                R.id.navigation_home, R.id.navigation_add_items
             )
         )
 
@@ -66,5 +69,14 @@ class MainActivity : AppCompatActivity() {
             data?.let {
                 intentResult.value = requestCode to it
             }
+    }
+
+    override fun onBackPressed() {
+        if (backPressedObservers.filter { it.backPress() }.count() == 0)
+            super.onBackPressed()
+    }
+
+    fun registerBackPressedObserver(observer: BackPressedObserver){
+        backPressedObservers.add(observer)
     }
 }

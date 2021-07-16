@@ -264,7 +264,8 @@
                 style="@style/EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter price" />
+                android:hint="Enter price"
+                android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textview.MaterialTextView
@@ -330,12 +331,12 @@
             app:layout_constraintStart_toEndOf="@+id/check_add_items_anonymous"
             app:layout_constraintTop_toTopOf="@+id/check_add_items_anonymous" />
 
-        <com.google.android.material.button.MaterialButton
+        <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
             android:id="@+id/button_add_item_continue"
             style="@style/Button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="12dp"
             android:text="Continue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
