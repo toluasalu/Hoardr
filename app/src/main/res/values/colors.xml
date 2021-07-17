@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Interface colors -->
+    <color name="hot_pink">#FF3D57</color>
+    <color name="hot_pink_shade_1">#FEC0C8</color>
+    <color name="hot_pink_shade_2">#FFE4E7</color>
+
+    <color name="hot_yellow">#FFCA00</color>
+    <color name="text_color_light">#F7F7F8</color>
+    <color name="hot_yellow_shade_1">#FEEEB1</color>
+    <color name="hot_yellow_shade_2">#FEF5D3</color>
+    <color name="hot_yellow_shade_3">#FFFAEA</color>
+
+    <!-- Error color -->
+    <color name="red">#FF122E</color>
+
+    <!-- Text colors -->
+    <color name="text_shade_1">#24242B</color>
+    <color name="text_shade_2">#4B4B58</color>
+    <color name="text_shade_3">#666679</color>
+    <color name="text_shade_4">#818195</color>
+    <color name="text_shade_5">#A5A5B3</color>
+    <color name="text_shade_6">#C6C6D0</color>
+    <color name="text_shade_7">#E4E4E9</color>
+    <color name="text_shade_8">#F7F7F8</color>
 </resources>
