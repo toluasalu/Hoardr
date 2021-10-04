@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/onboardingFragment">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.jeffreyorazulike.hoardr.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_navigation_home_to_itemDetailFragment"
+            app:destination="@id/itemDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemDetailFragment"
+        android:name="com.jeffreyorazulike.hoardr.ui.items.ItemDetailFragment"
+        android:label="Item">
+        <action
+            android:id="@+id/action_itemDetailFragment_to_exerciseFragment"
+            app:destination="@id/exerciseFragment" />
+        <argument
+            android:name="item"
+            app:argType="com.jeffreyorazulike.hoardr.models.Item" />
+        <argument
+            android:name="user"
+            app:argType="com.jeffreyorazulike.hoardr.models.User"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/exerciseFragment"
+        android:name="com.jeffreyorazulike.hoardr.ui.home.ExerciseFragment"
+        android:label="Exercise"
+        tools:layout="@layout/fragment_exercise" >
+        <action
+            android:id="@+id/action_exerciseFragment_to_successFragment"
+            app:destination="@id/successFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_add_items"
+        android:name="com.jeffreyorazulike.hoardr.ui.items.AddItemsFragment"
+        android:label="Add Items">
+        <action
+            android:id="@+id/action_navigation_add_items_to_addItemFragment"
+            app:destination="@id/addItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addItemFragment"
+        android:name="com.jeffreyorazulike.hoardr.ui.items.AddItemsUploadItemFragment"
+        tools:layout="@layout/fragment_add_item">
+        <action
+            android:id="@+id/action_addItemFragment_to_successFragment"
+            app:destination="@id/successFragment" />
+    </fragment>
+
+    <navigation android:id="@+id/login_navigation"
+        app:startDestination="@id/loginFragment">
+        <fragment
+            android:id="@+id/loginFragment"
+            android:name="com.jeffreyorazulike.hoardr.ui.signin.LoginFragment"
+            android:label="Login"
+            tools:layout="@layout/fragment_login">
+            <action
+                android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
+                app:destination="@id/forgotPasswordFragment" />
+            <action
+                android:id="@+id/action_loginFragment_to_registrationFragment"
+                app:destination="@id/registrationFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/registrationFragment"
+            android:name="com.jeffreyorazulike.hoardr.ui.signin.RegistrationFragment"
+            android:label="Registration"
+            tools:layout="@layout/fragment_registration">
+            <action
+                android:id="@+id/action_registrationFragment_to_loginFragment"
+                app:destination="@id/loginFragment"
+                app:popUpTo="@id/registrationFragment"
+                app:popUpToInclusive="true" />
+        </fragment>
+        <fragment
+            android:id="@+id/forgotPasswordFragment"
+            android:name="com.jeffreyorazulike.hoardr.ui.forgot_password.ForgotPasswordFragment"
+            android:label="Forgot Password"
+            tools:layout="@layout/forgot_password_fragment" />
+        <action
+            android:id="@+id/action_navigation_login_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:popUpTo="@id/mobile_navigation"
+            app:popUpToInclusive="true" />
+    </navigation>
+
+    <fragment
+        android:id="@+id/successFragment"
+        android:name="com.jeffreyorazulike.hoardr.ui.general.SuccessFragment"
+        android:label="Success"
+        tools:layout="@layout/fragment_success">
+        <argument
+            android:name="data"
+            app:argType="com.jeffreyorazulike.hoardr.models.fragment_initializers.SuccessModel" />
+    </fragment>
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="com.jeffreyorazulike.hoardr.ui.general.OnboardingFragment"
+        tools:layout="@layout/fragment_onboarding">
+        <action
+            android:id="@+id/action_onboardingFragment_to_login_navigation"
+            app:destination="@id/login_navigation" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_favourites"
+        android:name="com.jeffreyorazulike.hoardr.ui.general.FavouritesFragment"
+        android:label="FavouritesFragment" >
+        <action
+            android:id="@+id/action_favouritesFragment_to_itemDetailFragment"
+            app:destination="@id/itemDetailFragment" />
+    </fragment>
+
+</navigation>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/view_padding">
+
+
+    <ImageView
+        android:id="@+id/image_onboarding"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/text_onboarding_title"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread_inside"
+        app:srcCompat="@drawable/vector_box" />
+
+    <TextView
+        android:id="@+id/text_onboarding_title"
+        style="@style/TextStyleH2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_onboarding"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="You clutter your space, we make it even better." />
+
+    <TextView
+        android:id="@+id/text_onboarding_content"
+        style="@style/TextStyleBody"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/home_header_margin"
+        android:layout_marginBottom="@dimen/home_header_margin"
+        app:layout_constraintBottom_toTopOf="@+id/button_onboarding_action"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_onboarding_title"
+        app:layout_constraintVertical_chainStyle="spread_inside"
+        tools:text="Your place doesn't need to look like a Nigerian cementary before making it look livable, connect with the right audience today." />
+
+    <Button
+        android:id="@+id/button_onboarding_action"
+        style="@style/Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/home_header_margin"
+        android:layout_marginBottom="@dimen/home_content_margin"
+        app:layout_constraintBottom_toTopOf="@+id/text_onboarding_skip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_onboarding_content"
+        tools:text="Next" />
+
+        <TextView
+            android:id="@+id/text_onboarding_skip"
+            style="@style/TextStyleSmall1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Skip"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/image_onbarding_skip"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/image_onbarding_skip"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_onboarding_skip"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/text_onboarding_skip"
+        app:layout_constraintTop_toTopOf="@+id/text_onboarding_skip"
+        app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
+        app:tint="@color/text_shade_5" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_onboarding_skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="image_onbarding_skip,text_onboarding_skip"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/view_padding">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_add_items_add_image"
+            style="@style/TextStyleBody"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/home_header_margin"
+            android:text="Add Image*"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textinput_add_items_description" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_add_items_section_head"
+            style="@style/TextStyleH5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/home_header_margin"
+            android:text="Make your items visible."
+            app:layout_constraintEnd_toStartOf="@+id/text_add_items_section_count"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_add_items_section_count"
+            style="@style/TextStyleH5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="/2"
+            android:textColor="@color/text_shade_5"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/text_add_items_section_head"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_add_items_section_head"
+            app:layout_constraintTop_toTopOf="@+id/text_add_items_section_head" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_add_items_category"
+            style="@style/TextStyleBody"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/home_header_margin"
+            android:text="Category*"
+            android:textAppearance="@style/TextStyleBody"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_add_items_section_head" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textinput_add_items_category"
+            style="@style/DropDownInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_padding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_add_items_category">
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_add_items_location"
+            style="@style/TextStyleBody"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/home_header_margin"
+            android:text="Location*"
+            android:textAppearance="@style/TextStyleBody"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textinput_add_items_category" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textinput_add_items_location"
+            style="@style/DropDownInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_padding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_add_items_location">
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_add_items_title"
+            style="@style/TextStyleBody"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/home_header_margin"
+            android:text="Title*"
+            android:textAppearance="@style/TextStyleBody"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textinput_add_items_location" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textinput_add_items_title"
+            style="@style/TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_padding"
+            app:errorEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_add_items_title">
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Title" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_add_items_description"
+            style="@style/TextStyleBody"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/home_header_margin"
+            android:text="Description*"
+            android:textAppearance="@style/TextStyleBody"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textinput_add_items_title" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textinput_add_items_description"
+            style="@style/TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/view_padding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_default="spread"
+            app:layout_constraintHeight_percent=".2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_add_items_description">
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/EditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Describe Item"
+                android:inputType="textMultiLine" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_add_items_images_requirement"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/home_content_margin"
+            android:text="Add at least 1 image but not more than 4 images"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_add_items_add_image" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_add_items_added_images"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/home_content_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_add_items_images_requirement"
+            tools:itemCount="1"
+            tools:listitem="@layout/item_product">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_add_items_images_requirement_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/home_content_margin"
+            android:text="Max image size is 5mb\nSupported image formats are *.jpg and *.png"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/list_add_items_added_images" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_add_items_item_price"
+            style="@style/TextStyleBody"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/home_header_margin"
+            android:text="How would you like to list this item?*"
+            android:textAppearance="@style/TextStyleBody"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_add_items_images_requirement_2" />
+
+        <CheckBox
+            android:id="@+id/check_add_items_for_sale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/home_content_margin"
+            android:text="For sale"
+            app:layout_constraintEnd_toStartOf="@+id/check_add_items_for_exchange"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_add_items_item_price" />
+
+        <CheckBox
+            android:id="@+id/check_add_items_for_exchange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="For exchange"
+            app:layout_constraintBottom_toBottomOf="@+id/check_add_items_for_sale"
+            app:layout_constraintEnd_toStartOf="@+id/check_add_items_for_free"
+            app:layout_constraintStart_toEndOf="@+id/check_add_items_for_sale"
+            app:layout_constraintTop_toTopOf="@+id/check_add_items_for_sale" />
+
+        <CheckBox
+            android:id="@+id/check_add_items_for_free"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="For Free"
+            app:layout_constraintBottom_toBottomOf="@+id/check_add_items_for_exchange"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/check_add_items_for_exchange"
+            app:layout_constraintTop_toTopOf="@+id/check_add_items_for_exchange" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_add_items_price"
+            style="@style/TextStyleBody"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/home_header_margin"
+            android:text="Price*"
+            android:textAppearance="@style/TextStyleBody"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/check_add_items_for_sale" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textinput_add_items_price"
+            style="@style/TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/home_content_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_add_items_price">
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter price"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_add_items_exchange_for"
+            style="@style/TextStyleBody"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/home_header_margin"
+            android:text="Items to exchange for*"
+            android:textAppearance="@style/TextStyleBody"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textinput_add_items_price" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textinput_add_items_exchange_for"
+            style="@style/TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/home_content_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_add_items_exchange_for">
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter items (e.g Ring light or Headphone)"
+                android:inputType="textAutoComplete" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_add_items_personal_detail"
+            style="@style/TextStyleBody"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/home_header_margin"
+            android:text="Enter personal details*"
+            android:textAppearance="@style/TextStyleBody"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textinput_add_items_exchange_for" />
+
+        <CheckBox
+            android:id="@+id/check_add_items_anonymous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/home_content_margin"
+            android:text="Keep me anonymous"
+            app:layout_constraintEnd_toStartOf="@+id/check_add_items_use_name"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_add_items_personal_detail" />
+
+        <CheckBox
+            android:id="@+id/check_add_items_use_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Use name"
+            app:layout_constraintBottom_toBottomOf="@+id/check_add_items_anonymous"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/check_add_items_anonymous"
+            app:layout_constraintTop_toTopOf="@+id/check_add_items_anonymous" />
+
+        <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+            android:id="@+id/button_add_item_continue"
+            style="@style/Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Continue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/check_add_items_anonymous" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_add_items_personal_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="text_add_items_personal_detail,check_add_items_anonymous,check_add_items_use_name"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_add_items_exchange_for"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="text_add_items_exchange_for,textinput_add_items_exchange_for"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp"
+            tools:visibility="visible" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_add_items_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="text_add_items_price,textinput_add_items_price"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp"
+            tools:visibility="visible" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_add_items_list_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="text_add_items_item_price,check_add_items_for_sale,check_add_items_for_exchange,check_add_items_for_free" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_add_items_add_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="text_add_items_images_requirement_2,list_add_items_added_images,text_add_items_images_requirement,text_add_items_add_image" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_add_items_extra_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="text_add_items_category,textinput_add_items_category,text_add_items_location,textinput_add_items_location" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
