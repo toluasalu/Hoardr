@@ -35,7 +35,12 @@
     <string name="placeholder_message_content">Welcome, Joel. I really look \nforward to meeting you at this …</string>
     <string name="textinput_hint">Write here</string>
     <string name="enter_something_here">Enter something here</string>
-
     <string name="success_exercise">Test successfully sent, the owner of the item would reach out to you soon.</string>
     <string name="success_add_item">Item successfully uploaded.</string>
+    <string-array name="categories_array">
+        <item>Electronics</item>
+        <item>Jewelry</item>
+        <item>Clothes</item>
+        <item>Machinery</item>
+    </string-array>
 </resources>
