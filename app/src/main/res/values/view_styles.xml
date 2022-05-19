@@ -41,7 +41,7 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">14sp</item>
         <item name="android:textAllCaps">true</item>
-        <item name="backgroundTint">#ffe9c9</item>
+        <item name="backgroundTint">@color/hot_pink</item>
         <item name="cornerRadius">4dp</item>
         <item name="lineHeight">16sp</item>
         <item name="android:padding">16dp</item>

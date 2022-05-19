@@ -152,6 +152,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_hero_info" />
 
+
         <TextView
             android:id="@+id/text_hero_header"
             android:layout_width="0dp"

@@ -8,14 +8,14 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:712325539641:android:5e3d0caa2aa9ccceccaae8",
+        "mobilesdk_app_id": "1:712325539641:android:59be01987c22bd61ccaae8",
         "android_client_info": {
           "package_name": "com.jeffreyorazulike.hoardr"
         }
       },
       "oauth_client": [
         {
-          "client_id": "712325539641-b50nbuqdmtqq1d56jrmvchpiaqarjm5d.apps.googleusercontent.com",
+          "client_id": "712325539641-hpqdrss28aqusbbphcu98e67t9p0uhkv.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.jeffreyorazulike.hoardr",

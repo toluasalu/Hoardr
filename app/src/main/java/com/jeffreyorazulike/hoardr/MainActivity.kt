@@ -3,6 +3,8 @@ package com.jeffreyorazulike.hoardr
 import android.Manifest
 import android.content.Intent
 import android.os.Bundle
+import android.view.ViewGroup
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.lifecycle.MutableLiveData
@@ -17,9 +19,9 @@ import com.jeffreyorazulike.hoardr.databinding.ActivityMainBinding
 import com.jeffreyorazulike.hoardr.utils.BackPressedObserver
 import com.jeffreyorazulike.hoardr.utils.HoardrViewModel
 
-class MainActivity : AppCompatActivity(){
+class MainActivity : AppCompatActivity() {
 
-    companion object{
+    companion object {
         const val IMAGE_REQUEST_CODE = 0x01
     }
 
@@ -28,6 +30,7 @@ class MainActivity : AppCompatActivity(){
     private lateinit var binding: ActivityMainBinding
     lateinit var mViewModel: HoardrViewModel
     val intentResult: MutableLiveData<Pair<Int, Intent>> = MutableLiveData()
+
     // fragments that want to perform an action when the back button is pressed
     private val backPressedObservers = mutableListOf<BackPressedObserver>()
 
@@ -41,8 +44,12 @@ class MainActivity : AppCompatActivity(){
 
     private fun initializeDisplayContent() {
         binding = ActivityMainBinding.inflate(layoutInflater)
+
+
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
+
+
 
         navController = findNavController(R.id.nav_host_fragment)
         // Passing each menu ID as a set of Ids because each
@@ -54,7 +61,8 @@ class MainActivity : AppCompatActivity(){
         )
 
         ActivityCompat.requestPermissions(
-            this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 1)
+            this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 1
+        )
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         binding.navView.setupWithNavController(navController)
@@ -65,7 +73,7 @@ class MainActivity : AppCompatActivity(){
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if(resultCode == RESULT_OK)
+        if (resultCode == RESULT_OK)
             data?.let {
                 intentResult.value = requestCode to it
             }
@@ -76,7 +84,7 @@ class MainActivity : AppCompatActivity(){
             super.onBackPressed()
     }
 
-    fun registerBackPressedObserver(observer: BackPressedObserver){
+    fun registerBackPressedObserver(observer: BackPressedObserver) {
         backPressedObservers.add(observer)
     }
 }
